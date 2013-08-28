@@ -1,0 +1,49 @@
+@button-size: 10px;
+@button-size-small: 6px;
+
+#dashboard {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	margin-top: 12%;
+
+	h1 {
+		span {
+			color: #FF3D7F;
+		}
+	}
+
+	.primary-events {
+		button {
+			font-size: (@button-size * 4px);
+			width: (@button-size * 20px);
+			height: (@button-size * 20px);
+			margin: (@button-size * 2px);
+
+			i {
+				font-size: (@button-size * 11px);
+			}
+		}
+	}
+
+	.secondary-events {
+		button {
+			font-size: (@button-size-small * 3px);
+			width: (@button-size-small * 20px);
+			height: (@button-size-small * 20px);
+			margin: (@button-size-small * 2px);
+
+			i {
+				font-size: (@button-size-small * 11px);
+			}
+		}
+	}
+
+	button {
+		text-shadow: none;
+
+		i {
+			display: block;
+		}
+	}
+}

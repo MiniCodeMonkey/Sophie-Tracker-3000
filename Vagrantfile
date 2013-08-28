@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
         :name           => "sophietracker",
 
         # Name of MySQL database that should be created
-        :db_name        => "dbname",
+        :db_name        => "sophietracker",
 
         # Optional database dump to be imported when server is provisioned
         # If the file doesn't exist, it is just ignored

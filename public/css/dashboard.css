@@ -1,0 +1,4 @@
+#dashboard{text-align:center;width:100%;height:100%;margin-top:12%;}#dashboard h1 span{color:#FF3D7F;}
+#dashboard .primary-events button{font-size:40px;width:200px;height:200px;margin:20px;}#dashboard .primary-events button i{font-size:110px;}
+#dashboard .secondary-events button{font-size:18px;width:120px;height:120px;margin:12px;}#dashboard .secondary-events button i{font-size:66px;}
+#dashboard button{text-shadow:none;}#dashboard button i{display:block;}
