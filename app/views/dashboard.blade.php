@@ -33,6 +33,7 @@
 
 @include('dialogs.feed', compact('timeLevels', 'bottleLevels'))
 @include('dialogs.diaper')
+@include('dialogs.pump', compact('pumpLevels'))
 
 <div class="page-header">
     <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>

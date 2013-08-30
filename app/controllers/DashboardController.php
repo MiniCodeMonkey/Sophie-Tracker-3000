@@ -16,6 +16,12 @@ class DashboardController extends BaseController {
 			4.5 => 'Really Hungry'
 		);
 
+		$pumpLevels = array(
+			1 => 'Small pump',
+			3 => 'Regular pump',
+			4.5 => 'Over-the-top-filled pump'
+		);
+
 		$eventTypeCategories = array(
 			'primary' => EventType::where('is_primary', true)
 							->orderBy('is_primary', 'DESC')
@@ -27,7 +33,7 @@ class DashboardController extends BaseController {
 							->get()
 		);
 
-		return View::make('dashboard', compact('eventTypeCategories', 'timeLevels', 'bottleLevels'));
+		return View::make('dashboard', compact('eventTypeCategories', 'timeLevels', 'bottleLevels', 'pumpLevels'));
 	}
 
 }
