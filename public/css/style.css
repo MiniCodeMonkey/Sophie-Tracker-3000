@@ -76,6 +76,12 @@
   height: 100%;
   margin-top: 12%;
 }
+#dashboard #notification {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 #dashboard h1 span {
   color: #FF3D7F;
 }
@@ -89,17 +95,24 @@
   font-size: 110px;
 }
 #dashboard .secondary-events button {
-  font-size: 18px;
-  width: 120px;
-  height: 120px;
-  margin: 12px;
+  font-size: 15px;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
 }
 #dashboard .secondary-events button i {
-  font-size: 66px;
+  font-size: 55px;
 }
 #dashboard button {
   text-shadow: none;
 }
 #dashboard button i {
+  display: block;
+}
+#feedModal .feed-types {
+  margin-bottom: 20px;
+}
+#feedModal .feed-types button span,
+#feedModal .bottle-options button span {
   display: block;
 }

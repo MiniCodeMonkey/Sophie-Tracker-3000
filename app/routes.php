@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('dashboard');
-});
+Route::get('/', 'DashboardController@show');
+Route::controller('track', 'TrackController');

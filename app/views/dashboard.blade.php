@@ -10,42 +10,73 @@
     {{ stylesheet() }}
 </head>
 <body id="dashboard">
-<h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
+<div id="notification" class="alert alert-info hide">
+    <p class="pull-left lead">
+        <strong class="event-type">Feed</strong> event was tracked!
+    </p>
 
-<div class="primary-events">
-    <button type="button" class="btn btn-default btn-lg btn-primary">
-        <i class="icon-baby-bottle"></i> Nursed
-    </button>
+    <p class="pull-right">
+        <button type="button" data-toggle="modal" data-target="#somethingModal" class="btn btn-primary">
+            <i class="icon-undo"></i> Undo
+        </button>
 
-    <button type="button" class="btn btn-default btn-lg btn-success">
-        <i class="icon-baby-diaper"></i> Diaper
-    </button>
-
-    <button type="button" class="btn btn-default btn-lg btn-warning">
-        <i class="icon-baby-crib"></i> Slept
-    </button>
+        <button type="button" data-toggle="modal" data-target="#somethingModal" class="btn btn-primary">
+            <i class="icon-plus"></i> Add details
+        </button>
+    </p>
 </div>
 
-<div class="secondary-events">
-    <button type="button" class="btn btn-default btn-lg btn-info">
-        <i class="icon-baby-rattle"></i> Play
-    </button>
+@include('dialogs.feed', compact('timeLevels', 'bottleLevels'))
 
-    <button type="button" class="btn btn-default btn-lg btn-info">
-        <i class="icon-medkit"></i> Medicin
-    </button>
-
-    <button type="button" class="btn btn-default btn-lg btn-info">
-        <i class="icon-tint"></i> Bath
-    </button>
-
-    <button type="button" class="btn btn-default btn-lg btn-info">
-        <i class="icon-pencil"></i> Note
-    </button>
+<div class="page-header">
+    <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
 </div>
+
+@foreach ($eventTypeCategories as $eventTypeCategory => $eventTypes)
+    <div class="{{ $eventTypeCategory }}-events">
+        @foreach ($eventTypes as $eventType)
+        <button type="button" data-toggle="modal" data-target="#{{ strtolower($eventType->name) }}Modal" class="btn btn-lg btn-{{ $eventType->color_name }}">
+            <i class="{{ $eventType->icon }}"></i> {{ $eventType->name }}
+        </button>
+        @endforeach
+    </div>
+@endforeach
+
+<!-- <div class="row">
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+    </div>
+</div> -->
 
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="/js/script.js"></script>
+{{ script() }}
 </body>
 </html>

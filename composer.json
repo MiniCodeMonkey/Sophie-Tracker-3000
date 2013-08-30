@@ -3,7 +3,14 @@
     "config": {
         "preferred-install": "dist"
     }, 
-    "require": {}, 
+    "require": {
+        "laravel/framework": "4.0.*",
+        "way/generators": "dev-master"
+    },
+    "require-dev": {
+        "way/guard-laravel": "dev-master"
+    }, 
+    "minimum-stability": "dev",
     "autoload": {
         "classmap": [
             "app/commands", 
@@ -32,9 +39,5 @@
         "framework", 
         "laravel"
     ], 
-    "minimum-stability": "dev", 
-    "require-dev": {
-        "way/guard-laravel": "dev-master"
-    }, 
     "description": "The Laravel Framework."
 }
