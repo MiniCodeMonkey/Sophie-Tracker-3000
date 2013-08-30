@@ -32,11 +32,11 @@ $(function() {
 		}, function (response) {
 			if (response.success && response.success == true) {
 				$('#notification .event-type').html('Feed');
-				$('#notification').css('top', -$('#notification').height() + 'px')
+				$('#notification').css('top', '-500px')
 					.removeClass('hide')
 					.animate({ top: '0px' })
 					.delay(8000)
-					.animate({ top: -$('#notification').height() + 'px' }, 400, function() {
+					.animate({ top: '-500px' }, 400, function() {
 						$('#notification').addClass('hide')
 					});
 
