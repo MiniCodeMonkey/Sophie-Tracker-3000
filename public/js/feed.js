@@ -1,6 +1,18 @@
 $(function() {
 	var feedType;
 
+	$('#feedModal').on('hidden.bs.modal', function () {
+		// Reset all button states
+		$('#feedModal .feed-types button')
+			.removeClass('btn-primary')
+			.removeClass('btn-info')
+			.addClass('btn-info');
+
+		// Hide all sub options
+		$('#feedModal .bottle-options').addClass('hide');
+		$('#feedModal .time-options').addClass('hide');
+	});
+
 	$('#feedModal .feed-types button').click(function () {
 		// Reset all button states
 		$('#feedModal .feed-types button')
@@ -25,25 +37,7 @@ $(function() {
 	});
 
 	$('#feedModal .time-options button, #feedModal .bottle-options button').click(function () {
-		$.post('track/new', {
-			type: 'Feed',
-			subtype: feedType,
-			value: $(this).data('value')
-		}, function (response) {
-			if (response.success && response.success == true) {
-				$('#notification .event-type').html('Feed');
-				$('#notification').css('top', '-500px')
-					.removeClass('hide')
-					.animate({ top: '0px' })
-					.delay(8000)
-					.animate({ top: '-500px' }, 400, function() {
-						$('#notification').addClass('hide')
-					});
-
-				$('#feedModal').modal('hide');
-			}
-		});
-
+		trackEvent($('#feedModal'), 'Feed', feedType, $(this).data('value'));
 		return false;
 	});
 });
