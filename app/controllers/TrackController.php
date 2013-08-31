@@ -28,9 +28,9 @@ class TrackController extends BaseController {
 			$last = $feedType->events()->orderBy('created_at', 'DESC')->first();
 
 			$result[strtolower($eventTypeName)] = array(
-				'time' => formatDateDiff($last->created_at),
-				'type' => $last->subtype,
-				'value' => $last->value
+				'time' => is_null($last) ? '' : formatDateDiff($last->created_at),
+				'type' => is_null($last) ? '' : $last->subtype,
+				'value' => is_null($last) ? '' : $last->value
 			);
 		}
 
