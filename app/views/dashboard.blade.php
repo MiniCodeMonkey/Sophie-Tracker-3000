@@ -49,7 +49,11 @@
             @foreach ($eventTypeCategories as $eventTypeCategory => $eventTypes)
                 <div class="{{ $eventTypeCategory }}-events">
                     @foreach ($eventTypes as $eventType)
-                    <button type="button" data-toggle="modal" data-target="#{{ strtolower($eventType->name) }}Modal" class="btn btn-lg btn-{{ $eventType->color_name }}">
+                    <button type="button" data-toggle="modal" data-target="#{{ strtolower($eventType->name) }}Modal" class="btn btn-lg btn-{{ $eventType->color_name }} eventbutton-{{ strtolower($eventType->name) }}">
+                        @if ($eventType->is_primary)
+                            <span class="badge"></span>
+                        @endif
+
                         <i class="{{ $eventType->icon }}"></i> {{ $eventType->name }}
                     </button>
                     @endforeach

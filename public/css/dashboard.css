@@ -1,6 +1,7 @@
 #dashboard{text-align:center;}#dashboard h1 span{color:#FF3D7F;}
 #dashboard .primary-events button{font-size:40px;width:200px;height:200px;margin:20px;}#dashboard .primary-events button i{font-size:110px;}
 #dashboard .secondary-events button{font-size:15px;width:100px;height:100px;margin:10px;}#dashboard .secondary-events button i{font-size:55px;}
-#dashboard button{text-shadow:none;}#dashboard button i{display:block;}
+#dashboard button{position:relative;text-shadow:none;}#dashboard button .badge{position:absolute;left:5px;top:177px;}
+#dashboard button i{display:block;}
 #feedModal .feed-types{margin-bottom:20px;}
 #feedModal .feed-types button span,#feedModal .bottle-options button span{display:block;}

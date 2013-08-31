@@ -14,7 +14,7 @@ $('#list-button').click(function() {
 
 				var formattedEvent = formatEvent(event);
 				row.append($('<td>').html($('<i>').addClass(event.type.icon)));
-				row.append($('<td>').html(event.time.date));
+				row.append($('<td>').html(event.time));
 				row.append($('<td>').html(formattedEvent.description));
 				row.append($('<td>').html(formattedEvent.value));
 

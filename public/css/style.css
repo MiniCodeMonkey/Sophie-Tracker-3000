@@ -95,7 +95,13 @@
   font-size: 55px;
 }
 #dashboard button {
+  position: relative;
   text-shadow: none;
+}
+#dashboard button .badge {
+  position: absolute;
+  left: 5px;
+  top: 177px;
 }
 #dashboard button i {
   display: block;
@@ -118,7 +124,7 @@
   z-index: 1000;
 }
 #list-button {
-  position: absolute;
+  position: absolute !important;
   right: 15px;
   top: 15px;
 }

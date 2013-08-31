@@ -21,16 +21,21 @@ class TrackController extends BaseController {
 
 	public function getStats()
 	{
-		$feedType = EventType::where('name', 'Feed')->firstOrFail();
-		$lastFeed = $feedType->events()->orderBy('created_at', 'DESC')->first();
+		$result = array();
+		$eventTypeNames = array('Feed', 'Pump', 'Diaper');
 
-		return Response::json(array(
-			'last_feed' => array(
-				'time' => formatDateDiff($lastFeed->created_at),
-				'type' => $lastFeed->subtype,
-				'value' => $lastFeed->value
-			)
-		));
+		foreach ($eventTypeNames as $eventTypeName) {
+			$feedType = EventType::where('name', $eventTypeName)->firstOrFail();
+			$last = $feedType->events()->orderBy('created_at', 'DESC')->first();
+
+			$result[strtolower($eventTypeName)] = array(
+				'time' => formatDateDiff($last->created_at),
+				'type' => $last->subtype,
+				'value' => $last->value
+			);
+		}
+
+		return Response::json($result);
 	}
 
 	public function getList()
@@ -46,7 +51,7 @@ class TrackController extends BaseController {
 					'color_name' => $event->type->color_name,
 					'is_primary' => $event->type->is_primary
 				),
-				'time' => $event->created_at,
+				'time' => $event->created_at->format('l m/d/y g:ia'),
 				'subtype' => $event->subtype,
 				'value' => $event->value
 			);
