@@ -1,15 +1,39 @@
 @button-size: 10px;
 @button-size-small: 5px;
+@button-size-tiny: 3px;
+@mobile: ~"only screen and (min-device-width: 320px) and (max-device-width: 568px)";
 
 #dashboard {
 	text-align: center;
 
-	h1 span {
-		color: #FF3D7F;
+	h1 {
+		@media @mobile {
+			font-size: 24px;
+			padding-top: 20px;
+		}
+
+		span {
+			color: #FF3D7F;
+		}
 	}
 
 	.primary-events {
 		button {
+			@media @mobile {
+				font-size: (@button-size-small * 4px);
+				width: (@button-size-small * 20px);
+				height: (@button-size-small * 20px);
+				margin: (@button-size-small * 0.5px);
+
+				i {
+					font-size: (@button-size-small * 11px) !important;
+				}
+
+				.badge {
+					display: none;
+				}
+			}
+
 			font-size: (@button-size * 4px);
 			width: (@button-size * 20px);
 			height: (@button-size * 20px);
@@ -23,6 +47,22 @@
 
 	.secondary-events {
 		button {
+			@media @mobile {
+				font-size: (@button-size-tiny * 4px);
+				width: (@button-size-tiny * 20px);
+				height: (@button-size-tiny * 20px);
+				margin: (@button-size-tiny * 0.8px);
+				padding: 0;
+
+				i {
+					font-size: (@button-size-tiny * 11px) !important;
+				}
+
+				.badge {
+					display: none;
+				}
+			}
+
 			font-size: (@button-size-small * 3px);
 			width: (@button-size-small * 20px);
 			height: (@button-size-small * 20px);
