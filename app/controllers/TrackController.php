@@ -14,7 +14,7 @@ class TrackController extends BaseController {
 		$event->value = Input::get('value');
 		$event->created_at = new DateTime;
 		$event->updated_at = new DateTime;
-		$event->save();
+		$eventType->events()->save($event);
 
 		return Response::json(array('success' => true));
 	}
@@ -31,6 +31,28 @@ class TrackController extends BaseController {
 				'value' => $lastFeed->value
 			)
 		));
+	}
+
+	public function getList()
+	{
+		$events = TrackerEvent::orderBy('created_at', 'DESC')->take(40)->get();
+		$list = array();
+
+		foreach ($events as $event) {
+			$list[] = array(
+				'type' => array(
+					'name' => $event->type->name,
+					'icon' => $event->type->icon,
+					'color_name' => $event->type->color_name,
+					'is_primary' => $event->type->is_primary
+				),
+				'time' => $event->created_at,
+				'subtype' => $event->subtype,
+				'value' => $event->value
+			);
+		}
+
+		return Response::json($list);
 	}
 
 }

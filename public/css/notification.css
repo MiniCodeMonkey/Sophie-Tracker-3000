@@ -1,1 +1,1 @@
-#success-notification,#error-notification{position:absolute;top:0;left:0;width:100%;text-align:left;display:none;}
+#success-notification,#error-notification{position:absolute;top:0;left:0;width:100%;text-align:left;display:none;z-index:1000;}

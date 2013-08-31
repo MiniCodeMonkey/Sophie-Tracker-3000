@@ -9,28 +9,30 @@
     width: 100%;
     height: 100%;
     position: relative;
-}
-.flip .card.flipped {
-    -webkit-transform: rotatey(-180deg);
-}
-.flip .card {
-    width: 100%;
-    height: 100%;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: 1.0s;
 
-    .face {
+    .card {
         width: 100%;
         height: 100%;
-        position: absolute;
-        -webkit-backface-visibility: hidden;
-        z-index: 2;
-    }
-    .front {
-        position: absolute;
-        z-index: 1;
-    }
-    .back {
-        -webkit-transform: rotatey(-180deg);
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: 1.0s;
+
+        .face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            -webkit-backface-visibility: hidden;
+            z-index: 2;
+        }
+        .front {
+            position: absolute;
+            z-index: 1;
+        }
+        .back {
+            -webkit-transform: rotatey(-180deg);
+        }
+
+        &.flipped {
+            -webkit-transform: rotatey(-180deg);
+        }
     }
 }

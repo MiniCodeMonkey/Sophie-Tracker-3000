@@ -5,4 +5,8 @@ class TrackerEvent extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array();
+
+	public function type() {
+		return $this->belongsTo('EventType');
+	}
 }

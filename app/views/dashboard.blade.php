@@ -35,17 +35,17 @@
 @include('dialogs.diaper')
 @include('dialogs.pump', compact('pumpLevels'))
 
+<div class="page-header">
+    <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
+
+    <button type="button" class="btn btn-primary btn-lg" id="list-button">
+        <i class="icon-list"></i>
+    </button>
+</div>
+
 <div class="flip"> 
     <div class="card"> 
-        <div class="face front"> 
-            <div class="page-header">
-                <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
-
-                <button type="button" class="btn btn-primary" id="list-button">
-                    <i class="icon-list"></i>
-                </button>
-            </div>
-
+        <div class="face front">
             @foreach ($eventTypeCategories as $eventTypeCategory => $eventTypes)
                 <div class="{{ $eventTypeCategory }}-events">
                     @foreach ($eventTypes as $eventType)
@@ -57,7 +57,7 @@
             @endforeach
         </div> 
         <div class="face back"> 
-            Back
+            <table class="table table-striped"></table>
         </div> 
     </div> 
 </div>

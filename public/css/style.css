@@ -115,6 +115,7 @@
   width: 100%;
   text-align: left;
   display: none;
+  z-index: 1000;
 }
 #list-button {
   position: absolute;
@@ -126,9 +127,6 @@
   width: 100%;
   height: 100%;
   position: relative;
-}
-.flip .card.flipped {
-  -webkit-transform: rotatey(-180deg);
 }
 .flip .card {
   width: 100%;
@@ -148,5 +146,8 @@
   z-index: 1;
 }
 .flip .card .back {
+  -webkit-transform: rotatey(-180deg);
+}
+.flip .card.flipped {
   -webkit-transform: rotatey(-180deg);
 }
