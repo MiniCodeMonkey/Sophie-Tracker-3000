@@ -19,4 +19,18 @@ class TrackController extends BaseController {
 		return Response::json(array('success' => true));
 	}
 
+	public function getStats()
+	{
+		$feedType = EventType::where('name', 'Feed')->firstOrFail();
+		$lastFeed = $feedType->events()->orderBy('created_at', 'DESC')->first();
+
+		return Response::json(array(
+			'last_feed' => array(
+				'time' => formatDateDiff($lastFeed->created_at),
+				'type' => $lastFeed->subtype,
+				'value' => $lastFeed->value
+			)
+		));
+	}
+
 }

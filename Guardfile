@@ -1,6 +1,6 @@
-guard :concat, :type => "css", :files => %w[dashboard icons notification slider style], :input_dir => "public/css", :output => "public/css/styles.min"
+guard :concat, :type => "css", :files => %w[dashboard flip icons notification slider style], :input_dir => "public/css", :output => "public/css/styles.min"
 
-guard :concat, :type => "js", :files => %w[diaper feed mobile notification pump track], :input_dir => "public/js", :output => "public/js/scripts.min"
+guard :concat, :type => "js", :files => %w[diaper feed flip mobile notification pump stats track], :input_dir => "public/js", :output => "public/js/scripts.min"
 
 guard :less, :all_on_start => true, :all_on_start => false, :output => 'public/css' do
 	watch(%r[^app/assets/less/(.+\.less)$])

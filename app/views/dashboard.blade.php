@@ -35,19 +35,32 @@
 @include('dialogs.diaper')
 @include('dialogs.pump', compact('pumpLevels'))
 
-<div class="page-header">
-    <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
-</div>
+<div class="flip"> 
+    <div class="card"> 
+        <div class="face front"> 
+            <div class="page-header">
+                <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
 
-@foreach ($eventTypeCategories as $eventTypeCategory => $eventTypes)
-    <div class="{{ $eventTypeCategory }}-events">
-        @foreach ($eventTypes as $eventType)
-        <button type="button" data-toggle="modal" data-target="#{{ strtolower($eventType->name) }}Modal" class="btn btn-lg btn-{{ $eventType->color_name }}">
-            <i class="{{ $eventType->icon }}"></i> {{ $eventType->name }}
-        </button>
-        @endforeach
-    </div>
-@endforeach
+                <button type="button" class="btn btn-primary" id="list-button">
+                    <i class="icon-list"></i>
+                </button>
+            </div>
+
+            @foreach ($eventTypeCategories as $eventTypeCategory => $eventTypes)
+                <div class="{{ $eventTypeCategory }}-events">
+                    @foreach ($eventTypes as $eventType)
+                    <button type="button" data-toggle="modal" data-target="#{{ strtolower($eventType->name) }}Modal" class="btn btn-lg btn-{{ $eventType->color_name }}">
+                        <i class="{{ $eventType->icon }}"></i> {{ $eventType->name }}
+                    </button>
+                    @endforeach
+                </div>
+            @endforeach
+        </div> 
+        <div class="face back"> 
+            Back
+        </div> 
+    </div> 
+</div>
 
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
