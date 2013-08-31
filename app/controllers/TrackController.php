@@ -9,7 +9,6 @@ class TrackController extends BaseController {
 
 		// Create new event
 		$event = new TrackerEvent;
-		$event->type_id = $eventType->id;
 		$event->subtype = Input::get('subtype');
 		$event->value = Input::get('value');
 		$event->created_at = new DateTime;
