@@ -1,6 +1,6 @@
 $(function() {
 	updateStats();
-	setInterval('updateStats()', 1000 * 60);
+	setInterval('updateStats()', 1000);
 });
 
 function updateStats()

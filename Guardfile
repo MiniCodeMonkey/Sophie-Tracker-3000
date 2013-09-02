@@ -1,4 +1,4 @@
-guard :concat, :type => "css", :files => %w[dashboard flip icons notification slider style], :input_dir => "public/css", :output => "public/css/styles.min"
+guard :concat, :type => "css", :files => %w[dashboard flip icons modal notification slider style], :input_dir => "public/css", :output => "public/css/styles.min"
 
 guard :concat, :type => "js", :files => %w[diaper feed flip mobile notification pump stats track], :input_dir => "public/js", :output => "public/js/scripts.min"
 

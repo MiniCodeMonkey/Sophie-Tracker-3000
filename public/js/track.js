@@ -20,6 +20,7 @@ function trackEvent(activeModal, type, subtype, value)
 		if (response.success && response.success == true) {
 			showNotification(type);
 			activeModal.modal('hide');
+			updateStats(); // Update the last feed/pump/diaper stats
 		} else {
 			showNotification(type, true);
 		}

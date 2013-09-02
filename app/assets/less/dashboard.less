@@ -1,7 +1,30 @@
 @button-size: 10px;
 @button-size-small: 5px;
 @button-size-tiny: 3px;
-@mobile: ~"only screen and (min-device-width: 320px) and (max-device-width: 568px)";
+@mobile: ~"only screen and (max-width: 480px)";
+
+.button-size-styles (@factor) when (@factor > 5px) {
+	font-size: (@factor * 4px);
+	width: (@factor * 20px);
+	height: (@factor * 20px);
+	margin: (@factor * 0.5px);
+
+	i {
+		font-size: (@factor * 11px) !important;
+	}
+}
+
+.button-size-styles (@factor) when (@factor =< 5px) {
+	font-size: (@factor * 3px);
+	width: (@factor * 20px);
+	height: (@factor * 20px);
+	margin: (@factor * 0.5px);
+	padding: 0;
+
+	i {
+		font-size: (@factor * 11px) !important;
+	}
+}
 
 #dashboard {
 	text-align: center;
@@ -19,57 +42,20 @@
 
 	.primary-events {
 		button {
+			.button-size-styles(@button-size);
+
 			@media @mobile {
-				font-size: (@button-size-small * 4px);
-				width: (@button-size-small * 20px);
-				height: (@button-size-small * 20px);
-				margin: (@button-size-small * 0.5px);
-
-				i {
-					font-size: (@button-size-small * 11px) !important;
-				}
-
-				.badge {
-					display: none;
-				}
-			}
-
-			font-size: (@button-size * 4px);
-			width: (@button-size * 20px);
-			height: (@button-size * 20px);
-			margin: (@button-size * 2px);
-
-			i {
-				font-size: (@button-size * 11px);
+				.button-size-styles(@button-size-small);
 			}
 		}
 	}
 
 	.secondary-events {
 		button {
+			.button-size-styles(@button-size-small);
+
 			@media @mobile {
-				font-size: (@button-size-tiny * 4px);
-				width: (@button-size-tiny * 20px);
-				height: (@button-size-tiny * 20px);
-				margin: (@button-size-tiny * 0.8px);
-				padding: 0;
-
-				i {
-					font-size: (@button-size-tiny * 11px) !important;
-				}
-
-				.badge {
-					display: none;
-				}
-			}
-
-			font-size: (@button-size-small * 3px);
-			width: (@button-size-small * 20px);
-			height: (@button-size-small * 20px);
-			margin: (@button-size-small * 2px);
-
-			i {
-				font-size: (@button-size-small * 11px);
+				.button-size-styles(@button-size-tiny);
 			}
 		}
 	}
@@ -82,6 +68,13 @@
 			position: absolute;
 			left: 5px;
 			top: 177px;
+
+			@media @mobile {
+				left: 0px;
+				top: 83px;
+				font-size: 9px;
+				padding: 3px;
+			}
 		}
 
 		i {

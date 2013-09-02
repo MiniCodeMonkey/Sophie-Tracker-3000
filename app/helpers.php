@@ -1,37 +1,40 @@
 <?php
-function formatDateDiff($start, $end=null) { 
-    if(!($start instanceof DateTime)) { 
+function formatDateDiff($start, $end = null) { 
+    if (!($start instanceof DateTime)) { 
         $start = new DateTime($start); 
     } 
     
-    if($end === null) { 
+    if ($end === null) { 
         $end = new DateTime(); 
     } 
     
-    if(!($end instanceof DateTime)) { 
+    if (!($end instanceof DateTime)) { 
         $end = new DateTime($start); 
     } 
     
     $interval = $end->diff($start); 
     $format = array(); 
-    if($interval->y !== 0) { 
+    if ($interval->y !== 0) { 
         $format[] = "%y y"; 
     } 
-    if($interval->m !== 0) { 
+    if ($interval->m !== 0) { 
         $format[] = "%m m"; 
     } 
-    if($interval->d !== 0) { 
+    if ($interval->d !== 0) { 
         $format[] = "%d d"; 
     } 
-    if($interval->h !== 0) { 
+    if ($interval->h !== 0) { 
         $format[] = "%h h"; 
     } 
-    if($interval->i !== 0) { 
+    if ($interval->i !== 0) { 
         $format[] = "%i min."; 
+    }
+    if ($interval->s !== 0 && !count($format)) {
+        return "less than a minute ago";
     } 
     
     // We use the two biggest parts 
-    if(count($format) > 1) { 
+    if (count($format) > 1) { 
         $format = array_shift($format)." and ".array_shift($format); 
     } else { 
         $format = array_pop($format); 
