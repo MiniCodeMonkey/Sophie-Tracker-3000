@@ -43,3 +43,24 @@ function formatDateDiff($start, $end = null) {
     // Prepend 'since ' or whatever you like 
     return $interval->format($format) . ' ago'; 
 }
+
+function spinner($step = 5, $default = 5, $unitName = 'ounces') {
+    $buttonLeft = '<button type="button" class="btn btn-success spinner-left">' . "\n" .
+        "\t" . '<i class="icon-caret-left"></i>' . "\n" .
+    '</button>';
+
+    $buttonRight = '<button type="button" class="btn btn-success spinner-right">' . "\n" .
+        "\t" . '<i class="icon-caret-right"></i>' . "\n" .
+    '</button>';
+
+    $amount = '<span class="amount">'. $default .'</span>';
+
+    $unit = '<span class="unit">'. $unitName .'</span>';
+
+    return '<div class="spinner" data-step="'. $step .'" data-value="'. $default .'">' . "\n" .
+            $buttonLeft . "\n" .
+            $amount . "\n" .
+            $unit . "\n" .
+            $buttonRight . "\n" .
+        '</div>';
+}

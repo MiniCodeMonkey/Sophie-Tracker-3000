@@ -29,8 +29,8 @@ $(function() {
 		return false;
 	});
 
-	$('#pumpModal .pump-options button').click(function () {
-		trackEvent($('#pumpModal'), 'Pump', pumpType, $(this).data('value'));
+	$('#pumpModal button.save').click(function () {
+		trackEvent($('#pumpModal'), 'Pump', pumpType, $(this).parent().find('.spinner').data('value'));
 		return false;
 	});
 });

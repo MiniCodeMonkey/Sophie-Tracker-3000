@@ -21,24 +21,19 @@
                 </div>
 
                 <div class="row hide time-options">
-                    @foreach ($timeLevels as $minutes => $name)
-                    <button type="button" class="btn btn-success" data-value="{{ $minutes }}">
-                        {{ $name }} <span>(~ {{ $minutes }} min.)</span>
+                    {{ spinner(5, 30, 'minutes') }}
+
+                    <button type="button" class="btn btn-lg btn-success save">
+                        <i class="icon-ok"></i> Save
                     </button>
-                    @endforeach
                 </div>
 
                 <div class="row hide bottle-options">
-                    @foreach ($bottleLevels as $ounces => $name)
-                    <button type="button" class="btn btn-success" data-value="{{ $ounces }}">
-                        {{ $name}}
-                        @if (!is_integer($ounces))
-                            <span>({{ (intval($ounces) > 0) ? intval($ounces) : '' }}&half; oz.)</span>
-                        @else
-                            <span>(~ {{ $ounces }} oz.)</span>
-                        @endif
+                    {{ spinner(0.5, 4, 'ounces') }}
+
+                    <button type="button" class="btn btn-lg btn-success save">
+                        <i class="icon-ok"></i> Save
                     </button>
-                    @endforeach
                 </div>
             </div>
         </div>

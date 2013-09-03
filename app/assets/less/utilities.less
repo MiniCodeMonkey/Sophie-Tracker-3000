@@ -1,0 +1,24 @@
+@mobile: ~"only screen and (max-width: 480px)";
+
+.button-size-styles (@factor) when (@factor > 5px) {
+	font-size: (@factor * 4px);
+	width: (@factor * 20px);
+	height: (@factor * 20px);
+	margin: (@factor * 0.5px);
+
+	i {
+		font-size: (@factor * 11px) !important;
+	}
+}
+
+.button-size-styles (@factor) when (@factor =< 5px) {
+	font-size: (@factor * 3px);
+	width: (@factor * 20px);
+	height: (@factor * 20px);
+	margin: (@factor * 0.5px);
+	padding: 0;
+
+	i {
+		font-size: (@factor * 11px) !important;
+	}
+}

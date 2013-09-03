@@ -36,8 +36,8 @@ $(function() {
 		return false;
 	});
 
-	$('#feedModal .time-options button, #feedModal .bottle-options button').click(function () {
-		trackEvent($('#feedModal'), 'Feed', feedType, $(this).data('value'));
+	$('#feedModal button.save').click(function () {
+		trackEvent($('#feedModal'), 'Feed', feedType, $(this).parent().find('.spinner').data('value'));
 		return false;
 	});
 });

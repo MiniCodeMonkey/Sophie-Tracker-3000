@@ -197,25 +197,91 @@
 .flip .card.flipped {
   -webkit-transform: rotatey(-180deg);
 }
-body .modal-dialog {
+#dashboard .modal-dialog {
   width: 80%;
-  height: 80%;
 }
-body .modal-dialog .btn {
-  font-size: 20px;
-  min-width: 100px;
-  min-height: 100px;
-  margin: 5px;
+#dashboard .modal-dialog .btn {
+  font-size: 15px;
+  width: 100px;
+  height: 100px;
+  margin: 2.5px;
+  padding: 0;
 }
-body .modal-dialog .btn i {
-  font-size: 88px;
+#dashboard .modal-dialog .btn i {
+  font-size: 55px !important;
 }
-body .modal-dialog .btn-lg {
+@media only screen and (max-width: 480px) {
+  #dashboard .modal-dialog .btn {
+    font-size: 9px;
+    width: 60px;
+    height: 60px;
+    margin: 1.5px;
+    padding: 0;
+  }
+  #dashboard .modal-dialog .btn i {
+    font-size: 33px !important;
+  }
+}
+#dashboard .modal-dialog .btn.save {
+  width: 450px;
+  height: 80px;
+  margin-top: 50px;
+}
+#dashboard .modal-dialog .btn.save i {
+  font-size: 55px !important;
+  display: inline-block;
+}
+@media only screen and (max-width: 480px) {
+  #dashboard .modal-dialog .btn.save {
+    width: 80%;
+    height: 60px;
+  }
+  #dashboard .modal-dialog .btn.save i {
+    font-size: 33px !important;
+  }
+}
+#dashboard .modal-dialog .btn-lg {
   font-size: 32px;
-  min-width: 160px;
-  min-height: 160px;
-  margin: 8px;
+  width: 160px;
+  height: 160px;
+  margin: 4px;
 }
-body .modal-dialog .btn-lg i {
-  font-size: 88px;
+#dashboard .modal-dialog .btn-lg i {
+  font-size: 88px !important;
+}
+@media only screen and (max-width: 480px) {
+  #dashboard .modal-dialog .btn-lg {
+    font-size: 15px;
+    width: 100px;
+    height: 100px;
+    margin: 2.5px;
+    padding: 0;
+  }
+  #dashboard .modal-dialog .btn-lg i {
+    font-size: 55px !important;
+  }
+}
+#dashboard .modal-dialog .spinner {
+  position: relative;
+}
+#dashboard .modal-dialog .spinner .amount {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 180px;
+  font-size: 60px;
+  margin: 5px;
+  text-align: center;
+}
+#dashboard .modal-dialog .spinner .unit {
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+}
+@media only screen and (max-width: 480px) {
+  #dashboard .modal-dialog .spinner .unit {
+    bottom: 0;
+  }
 }

@@ -1,29 +1,69 @@
 @button-modal-size: 8px;
 @button-modal-size-normal: 5px;
+@button-modal-size-small: 3px;
 
-body .modal-dialog {
+#dashboard .modal-dialog {
 	width: 80%;
-	height: 80%;
 
 	.btn {
-		font-size: (@button-modal-size-normal * 4px);
-		min-width: (@button-modal-size-normal * 20px);
-		min-height: (@button-modal-size-normal * 20px);
-		margin: (@button-modal-size-normal * 1px);
+		.button-size-styles(@button-modal-size-normal);
 
-		i {
-			font-size: (@button-modal-size * 11px);
+		@media @mobile {
+			.button-size-styles(@button-modal-size-small);
+		}
+
+		&.save {
+			width: 450px;
+			height: 80px;
+			margin-top: 50px;
+
+			i {
+				font-size: (@button-modal-size-normal * 11px) !important;
+				display: inline-block;
+			}
+
+			@media @mobile {
+				width: 80%;
+				height: 60px;
+
+				i {
+					font-size: (@button-modal-size-small * 11px) !important;
+				}
+			}
 		}
 	}
 
 	.btn-lg {
-		font-size: (@button-modal-size * 4px);
-		min-width: (@button-modal-size * 20px);
-		min-height: (@button-modal-size * 20px);
-		margin: (@button-modal-size * 1px);
+		.button-size-styles(@button-modal-size);
 
-		i {
-			font-size: (@button-modal-size * 11px);
+		@media @mobile {
+			.button-size-styles(@button-modal-size-normal);
 		}
-	}	
+	}
+
+	.spinner {
+		position: relative;
+
+		.amount {
+			display: inline-block;
+			width: (@button-modal-size-normal * 20px);
+			height: (@button-modal-size-normal * 20px);
+			line-height: (@button-modal-size-normal * 20px) * 1.8px;
+			font-size: (@button-modal-size-normal * 12px);
+			margin: (@button-modal-size-normal * 1px);
+			text-align: center;
+		}
+
+		.unit {
+			display: block;
+			position: absolute;
+			bottom: 8px;
+			left: 0;
+			width: 100%;
+
+			@media @mobile {
+				bottom: 0;
+			}
+		}
+	}
 }

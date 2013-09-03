@@ -1,9 +1,0 @@
-#dashboard{text-align:center;}@media only screen and (max-width: 480px){#dashboard h1{font-size:24px;padding-top:20px;}}#dashboard h1 span{color:#FF3D7F;}
-#dashboard .primary-events button{font-size:40px;width:200px;height:200px;margin:5px;}#dashboard .primary-events button i{font-size:110px !important;}
-@media only screen and (max-width: 480px){#dashboard .primary-events button{font-size:15px;width:100px;height:100px;margin:2.5px;padding:0;}#dashboard .primary-events button i{font-size:55px !important;}}
-#dashboard .secondary-events button{font-size:15px;width:100px;height:100px;margin:2.5px;padding:0;}#dashboard .secondary-events button i{font-size:55px !important;}
-@media only screen and (max-width: 480px){#dashboard .secondary-events button{font-size:9px;width:60px;height:60px;margin:1.5px;padding:0;}#dashboard .secondary-events button i{font-size:33px !important;}}
-#dashboard button{position:relative;text-shadow:none;}#dashboard button .badge{position:absolute;left:5px;top:177px;}@media only screen and (max-width: 480px){#dashboard button .badge{left:0px;top:83px;font-size:9px;padding:3px;}}
-#dashboard button i{display:block;}
-#feedModal .feed-types{margin-bottom:20px;}
-#feedModal .feed-types button span,#feedModal .bottle-options button span{display:block;}
