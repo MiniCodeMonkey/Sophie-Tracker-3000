@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'DashboardController@show');
+Route::controller('stats', 'StatsController');
 Route::controller('track', 'TrackController');
