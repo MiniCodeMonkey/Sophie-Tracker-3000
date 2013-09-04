@@ -285,3 +285,34 @@
     bottom: 0;
   }
 }
+#stats {
+  background-color: #333;
+}
+.legend {
+  list-style-type: none;
+}
+.legend li {
+  float: left;
+  margin-right: 8px;
+}
+.gridster > ul {
+  list-style-type: none;
+}
+.gridster > ul > li {
+  color: #FFF;
+}
+.gridster > ul > li.box1 {
+  background: #FA6900;
+}
+.gridster > ul > li.box2 {
+  background: #E0E4CC;
+}
+.gridster > ul > li.box3 {
+  background: #A7DBD8;
+}
+.gridster > ul > li.box4 {
+  background: #F38630;
+}
+.gridster > ul > li.box5 {
+  background: #69D2E7;
+}

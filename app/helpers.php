@@ -44,6 +44,11 @@ function formatDateDiff($start, $end = null) {
     return $interval->format($format) . ' ago'; 
 }
 
+function isAssoc($arr)
+{
+    return array_keys($arr) !== range(0, count($arr) - 1);
+}
+
 function spinner($step = 5, $default = 5, $unitName = 'ounces') {
     $buttonLeft = '<button type="button" class="btn btn-success spinner-left">' . "\n" .
         "\t" . '<i class="icon-caret-left"></i>' . "\n" .

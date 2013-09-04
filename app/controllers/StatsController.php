@@ -47,6 +47,13 @@ class StatsController extends BaseController {
 			'labels' => $labels,
 			'datasets' => array(
 				array(
+					'fillColor' => 'rgba(115,87,205,0.1)',
+					'strokeColor' => 'rgba(115,87,205,1.0)',
+					'pointColor' => 'rgba(115,87,205,1.0)',
+					'pointStrokeColor' => '#FFF',
+					'data' => $this->constructData($labels, array($data['wet'], $data['dirty'], $data['both']))
+				),
+				array(
 					'fillColor' => 'rgba(151,187,205,0.5)',
 					'strokeColor' => 'rgba(151,187,205,1.0)',
 					'pointColor' => 'rgba(151,187,205,1.0)',
@@ -75,11 +82,21 @@ class StatsController extends BaseController {
 		$result = array();
 
 		foreach ($labels as $label) {
-			if (!isset($data[$label])) {
-				$result[] = 0;
+			$sum = 0;
+
+			if (!isAssoc($data)) {
+				foreach ($data as $entry) {
+				if (isset($entry[$label])) {
+						$sum += $entry[$label];
+					}
+				}
 			} else {
-				$result[] = $data[$label];
+				if (isset($data[$label])) {
+					$sum = $data[$label];
+				}
 			}
+
+			$result[] = $sum;
 		}
 
 		return $result;
