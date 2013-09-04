@@ -47,30 +47,30 @@ class StatsController extends BaseController {
 			'labels' => $labels,
 			'datasets' => array(
 				array(
-					'fillColor' => 'rgba(115,87,205,0.1)',
-					'strokeColor' => 'rgba(115,87,205,1.0)',
-					'pointColor' => 'rgba(115,87,205,1.0)',
+					'fillColor' => 'rgba(255,255,255,0.1)',
+					'strokeColor' => 'rgba(255,255,255,1.0)',
+					'pointColor' => 'rgba(255,255,255,1.0)',
 					'pointStrokeColor' => '#FFF',
 					'data' => $this->constructData($labels, array($data['wet'], $data['dirty'], $data['both']))
 				),
 				array(
-					'fillColor' => 'rgba(151,187,205,0.5)',
-					'strokeColor' => 'rgba(151,187,205,1.0)',
-					'pointColor' => 'rgba(151,187,205,1.0)',
+					'fillColor' => 'rgba(255,255,255,0.5)',
+					'strokeColor' => 'rgba(255,255,255,1.0)',
+					'pointColor' => 'rgba(255,255,255,1.0)',
 					'pointStrokeColor' => '#FFF',
 					'data' => $this->constructData($labels, $data['wet'])
 				),
 				array(
-					'fillColor' => 'rgba(151,100,205,0.5)',
-					'strokeColor' => 'rgba(151,100,205,1.0)',
-					'pointColor' => 'rgba(151,100,205,1.0)',
+					'fillColor' => 'rgba(255,255,255,0.5)',
+					'strokeColor' => 'rgba(255,255,255,1.0)',
+					'pointColor' => 'rgba(255,255,255,1.0)',
 					'pointStrokeColor' => '#FFF',
 					'data' => $this->constructData($labels, $data['dirty'])
 				),
 				array(
-					'fillColor' => 'rgba(151,187,120,0.5)',
-					'strokeColor' => 'rgba(151,187,120,1.0)',
-					'pointColor' => 'rgba(151,187,120,1.0)',
+					'fillColor' => 'rgba(255,255,255,0.5)',
+					'strokeColor' => 'rgba(255,255,255,1.0)',
+					'pointColor' => 'rgba(255,255,255,1.0)',
 					'pointStrokeColor' => '#FFF',
 					'data' => $this->constructData($labels, $data['both'])
 				)

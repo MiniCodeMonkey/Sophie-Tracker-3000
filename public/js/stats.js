@@ -13,7 +13,9 @@ $(document).ready(function() {
 			scaleStepWidth: 2,
 			scaleStartValue: 0,
 			scaleLabel: "<%=value%>",
-			scaleFontColor: "#FFF"
+			scaleFontColor: "#FFF",
+			pointDotRadius: 3,
+			datasetStrokeWidth: 1
 		};
 		var diaperchart = new Chart(ctx).Line(data, options);
 	});
