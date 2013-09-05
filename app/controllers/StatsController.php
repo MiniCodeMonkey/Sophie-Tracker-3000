@@ -12,7 +12,8 @@ class StatsController extends BaseController {
 		return Response::json(array(
 			'diaper_graph' => $this->diaperGraph(),
 			'diaper_stats' => $this->diaperStats(),
-			'last_fed' => $this->lastFed()
+			'last_fed' => $this->lastFed(),
+			'feed_time' => $this->feedTime()
 		));
 	}
 
@@ -103,7 +104,7 @@ class StatsController extends BaseController {
 		// Calculate available diapers
 		$diapersAvailable = $diapersPurchased - $diapersUsed;
 
-		// Find average used diapers last 24 hours
+		// Find average used diapers last 48 hours
 		$twoDaysAgo = new DateTime;
 		$twoDaysAgo->sub(new DateInterval('PT48H'));
 
@@ -151,10 +152,44 @@ class StatsController extends BaseController {
 		}
 
 		return array(
-			'time' => is_null($last) ? '' : formatDateDiff($last->created_at),
+			'formatted_time' => is_null($last) ? '' : formatDateDiff($last->created_at),
+			'timestamp' => is_null($last) ? '' : $last->created_at,
 			'type' => is_null($last) ? '' : $last->subtype,
 			'value' => is_null($last) ? '' : $last->value,
 			'icon' => $icon
+		);
+	}
+
+	private function feedTime()
+	{
+		// Find all feedings for last 24 hours
+		$oneDayAgo = new DateTime;
+		$oneDayAgo->sub(new DateInterval('PT24H'));
+
+		$feed = EventType::where('name', 'Feed')->firstOrFail();
+		$feedings = $feed->events()
+			->where('created_at', '>', $oneDayAgo)
+			->orderBy('created_at', 'ASC')
+			->get();
+
+		$timeBetween = array();
+		$previous = NULL;
+		foreach ($feedings as $feeding) {
+			if (is_null($previous)) {
+				$previous = $feeding;
+			} else {
+				$timeBetween[] = $feeding->created_at->getTimestamp() - $previous->created_at->getTimestamp();
+				$previous = $feeding;
+			}
+		}
+
+		$average_diff = array_sum($timeBetween) / count($timeBetween);
+		$nextFeed = $previous->created_at->add(new DateInterval('PT'. $average_diff .'S'));
+
+		return array(
+			'average_diff' => $average_diff / 3600,
+			'next_feed' => $nextFeed,
+			'next_feed_formatted' => formatDateDiff($nextFeed)
 		);
 	}
 

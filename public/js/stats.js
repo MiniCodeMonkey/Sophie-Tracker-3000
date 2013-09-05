@@ -30,7 +30,7 @@ $(document).ready(function() {
 			.addClass(data.last_fed.icon);
 
 
-		$('.last-fed-time').html(data.last_fed.time.replace(' and', ', '));
+		$('.last-fed-time').html(data.last_fed.formatted_time.replace(' and', ', '));
 
 		var amount = '';
 		if (data.last_fed.type == 'left' || data.last_fed.type == 'right') {
@@ -40,5 +40,8 @@ $(document).ready(function() {
 		}
 		$('.last-fed-amount').html(amount);
 		$('.last-fed-type').html(data.last_fed.type);
+
+		// Projected time until next feeding
+		$('.feed-time-next').html(data.feed_time.next_feed_formatted);
 	});
 });
