@@ -300,17 +300,49 @@
 }
 .gridster > ul > li {
   color: #FFF;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.gridster > ul > li.box1 {
+.gridster > ul > li h1,
+.gridster > ul > li h2,
+.gridster > ul > li h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.gridster > ul > li h1 {
+  font-size: 30px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+.gridster > ul > li h2 {
+  text-transform: uppercase;
+  font-size: 70px;
+  font-weight: 700;
+}
+.gridster > ul > li h2 span {
+  font-size: 25px;
+  text-transform: none;
+}
+.gridster > ul > li h3 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
+}
+.gridster > ul > li .last-fed-icon {
+  font-size: 270px;
+  display: block;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.2);
+}
+.gridster > ul > li.box-diaper-chart {
   background: #FA6900;
 }
-.gridster > ul > li.box2 {
+.gridster > ul > li.box-diaper-stats {
   background: #E0E4CC;
 }
 .gridster > ul > li.box3 {
   background: #A7DBD8;
 }
-.gridster > ul > li.box4 {
+.gridster > ul > li.box-last-fed {
   background: #F38630;
 }
 .gridster > ul > li.box5 {

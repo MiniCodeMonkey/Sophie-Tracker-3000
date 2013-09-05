@@ -1,6 +1,8 @@
 $(function() {
-	updateLastEvent();
-	setInterval('updateLastEvent()', 1000);
+	if ($('#dashboard').length) {
+		updateLastEvent();
+		setInterval('updateLastEvent()', 1000);
+	}
 });
 
 function updateLastEvent()

@@ -15,6 +15,7 @@ class EventTypesTableSeeder extends Seeder {
 			array('name' => 'Medicine', 'icon' => 'icon-medkit', 'is_primary' => false, 'color_name' => 'info', 'created_at' => new DateTime, 'updated_at' => new DateTime),
 			array('name' => 'Doctor', 'icon' => 'icon-user-md', 'is_primary' => false, 'color_name' => 'info', 'created_at' => new DateTime, 'updated_at' => new DateTime),
 			array('name' => 'Bath', 'icon' => 'icon-tint', 'is_primary' => false, 'color_name' => 'info', 'created_at' => new DateTime, 'updated_at' => new DateTime),
+			array('name' => 'Supplies', 'icon' => 'icon-shopping-cart', 'is_primary' => false, 'color_name' => 'info', 'created_at' => new DateTime, 'updated_at' => new DateTime),
 			array('name' => 'Milestone', 'icon' => 'icon-trophy', 'is_primary' => false, 'color_name' => 'info', 'created_at' => new DateTime, 'updated_at' => new DateTime),
 			array('name' => 'Note', 'icon' => 'icon-pencil', 'is_primary' => false, 'color_name' => 'info', 'created_at' => new DateTime, 'updated_at' => new DateTime),
 		);

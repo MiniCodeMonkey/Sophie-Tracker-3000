@@ -7,14 +7,22 @@ class StatsController extends BaseController {
 		return View::make('stats');
 	}
 
-	public function getDiaper()
+	public function getUpdate()
+	{
+		return Response::json(array(
+			'diaper_graph' => $this->diaperGraph(),
+			'diaper_stats' => $this->diaperStats(),
+			'last_fed' => $this->lastFed()
+		));
+	}
+
+	private function diaperGraph()
 	{
 		$oneWeekAgo = new DateTime;
 		$oneWeekAgo->sub(new DateInterval('P7D'));
 
 		$feedType = EventType::where('name', 'Diaper')->firstOrFail();
-		$diaperChanges = $feedType
-			->events()
+		$diaperChanges = $feedType->events()
 			->select(DB::raw('DATE(created_at) AS date, COUNT(*) AS count, subtype'))
 			->where('created_at', '>', $oneWeekAgo)
 			->orderBy('created_at', 'ASC')
@@ -43,7 +51,7 @@ class StatsController extends BaseController {
 			$data[$day->subtype][$formattedDate] = $day->count;
 		}
 
-		return Response::json(array(
+		return array(
 			'labels' => $labels,
 			'datasets' => array(
 				array(
@@ -75,7 +83,79 @@ class StatsController extends BaseController {
 					'data' => $this->constructData($labels, $data['both'])
 				)
 			)
-		));
+		);
+	}
+
+
+	private function diaperStats()
+	{
+		// Find available diapers
+		$supplies = EventType::where('name', 'Supplies')->firstOrFail();
+		$diapersPurchased = $supplies->events()
+			->where('subtype', 'diaper')
+			->sum('value');
+
+		// Find used diapers
+		$diapers = EventType::where('name', 'Diaper')->firstOrFail();
+		$diapersUsed = $diapers->events()
+			->count();
+
+		// Calculate available diapers
+		$diapersAvailable = $diapersPurchased - $diapersUsed;
+
+		// Find average used diapers last 24 hours
+		$twoDaysAgo = new DateTime;
+		$twoDaysAgo->sub(new DateInterval('PT48H'));
+
+		$diapers = EventType::where('name', 'Diaper')->firstOrFail();
+		$averageUsed = $diapers->events()
+			->where('created_at', '>', $twoDaysAgo)
+			->count();
+
+		$diapersPerHour = $averageUsed / 48;
+
+		$runOutDate = new DateTime;
+		$runOutDate->add(new DateInterval('PT'. floor($diapersAvailable / $diapersPerHour) .'H'));
+
+		// Return data
+		if ($diapersPurchased) {
+			return array(
+				'available' => $diapersAvailable,
+				'used_per_day' => $diapersPerHour * 24,
+				'run_out' => array(
+					'date' => $runOutDate->format('F j, Y'),
+					'days' => $runOutDate->diff(new DateTime)->d
+				)
+			);
+		} else {
+			return array();
+		}
+	}
+
+	private function lastFed()
+	{
+		$feedType = EventType::where('name', 'Feed')->firstOrFail();
+		$last = $feedType->events()
+			->orderBy('created_at', 'DESC')
+			->first();
+
+		if (!is_null($last)) {
+			$icons = array(
+				'left' => 'icon-arrow-left',
+				'right' => 'icon-arrow-right',
+				'pumped' => 'icon-tint',
+				'formula' => 'icon-magic'
+			);
+
+			$icon = $icons[$last->subtype];
+		}
+
+		return array(
+			'time' => is_null($last) ? '' : formatDateDiff($last->created_at),
+			'type' => is_null($last) ? '' : $last->subtype,
+			'value' => is_null($last) ? '' : $last->value,
+			'icon' => $icon
+		);
 	}
 
 	private function constructData($labels, $data) {

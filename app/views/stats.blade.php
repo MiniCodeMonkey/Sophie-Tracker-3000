@@ -4,7 +4,7 @@
 
 <div class="gridster">
     <ul>
-        <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="box1">
+        <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="box-diaper-chart">
         	<ol class="legend">
 			    <li><i class="icon-sign-blank" style="color: rgb(15,87,205);"></i> Total diapers</li>
 			    <li><i class="icon-sign-blank" style="color: rgb(151,187,205);"></i> Wet only diapers</li>
@@ -15,12 +15,14 @@
         	<canvas id="diaperchart" width="500" height="180"></canvas>
 	    </li>
 
-	    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1" class="box2">
-	    	Diapers left
-	    	<span>122</span>
+	    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1" class="box-diaper-stats">
+	    	<h1>Diapers left</h1>
+	    	<h2 class="diapers-available">&mdash;</h2>
 
-	    	Will run out
-	    	<span>5 days</span>
+	    	<h1>Will run out in</h1>
+	    	<h2 class="diapers-run-out-days">&mdash;<span>days</span></h2>
+
+	    	<h3 class="diapers-run-out-date">&mdash;</h3>
 	    </li>
 
 	    <li data-row="1" data-col="4" data-sizex="1" data-sizey="2" class="box3">
@@ -29,8 +31,12 @@
 	    	Average time between feedings for last 24 hours compared to last fed
 	    </li>
 
-	    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class="box4">
-	    	Last fed
+	    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class="box-last-fed">
+	    	<i class="last-fed-icon icon-tint"></i>
+	    	<h1>Last fed</h1>
+	    	<h1 class="last-fed-time"></h1>
+	    	<h2 class="last-fed-amount"></h2>
+	    	<h1 class="last-fed-type"></h1>
 	    </li>
 
 	    <li data-row="2" data-col="2" data-sizex="2" data-sizey="1" class="box5">
