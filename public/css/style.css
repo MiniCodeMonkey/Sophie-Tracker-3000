@@ -498,6 +498,28 @@
 .gridster > ul > li.box-day-chart .legend {
   margin: 0 0 10px 15px;
 }
+.gridster > ul > li.box-day-chart .legend.time {
+  position: relative;
+  height: 10px;
+}
+.gridster > ul > li.box-day-chart .legend.time li {
+  position: absolute;
+  top: 0;
+  border-left: 2px solid #FFF;
+  padding-left: 4px;
+}
+.gridster > ul > li.box-day-chart .legend.time li:nth-child(1) {
+  left: 0%;
+}
+.gridster > ul > li.box-day-chart .legend.time li:nth-child(2) {
+  left: 33.33%;
+}
+.gridster > ul > li.box-day-chart .legend.time li:nth-child(3) {
+  left: 50%;
+}
+.gridster > ul > li.box-day-chart .legend.time li:nth-child(4) {
+  left: 83.33%;
+}
 .gridster > ul > li.box-day-chart .progress {
   margin: 0 12px;
   position: relative;
@@ -516,7 +538,7 @@
 .gridster > ul > li.box-info a:link,
 .gridster > ul > li.box-info a:visited {
   color: #FFF;
-  margin-right: 20px;
+  margin-right: 17px;
 }
 .gridster > ul > li.box-info a:hover {
   color: #999;

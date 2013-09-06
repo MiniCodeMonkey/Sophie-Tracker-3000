@@ -137,6 +137,34 @@
 
 				.legend {
 					margin: 0 0 10px 15px;
+
+					&.time {
+						position: relative;
+						height: 10px;
+
+						li {
+							position: absolute;
+							top: 0;
+							border-left: 2px solid #FFF;
+							padding-left: 4px;
+
+							&:nth-child(1) {
+								left: 0%;
+							}
+
+							&:nth-child(2) {
+								left: 33.33%;
+							}
+
+							&:nth-child(3) {
+								left: 50%;
+							}
+
+							&:nth-child(4) {
+								left: 83.33%;
+							}
+						}
+					}
 				}
 
 				.progress {
@@ -162,7 +190,7 @@
 
 				a:link, a:visited {
 					color: #FFF;
-					margin-right: 20px;
+					margin-right: 17px;
 				}
 
 				a:hover {

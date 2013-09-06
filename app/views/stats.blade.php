@@ -88,6 +88,13 @@
 				<li><i class="icon-sign-blank text-danger"></i> Medicine</li>
 			</ol>
 
+			<ol class="legend time clearfix">
+			    <li>Midnight</li>
+			    <li>8am</li>
+			    <li>Noon</li>
+			    <li>8pm</li>
+			</ol>
+
 	    	<div class="progress"></div>
 	    	<p class="chart-description">Click on a segment to get detailed information</p>
 	    </li>
