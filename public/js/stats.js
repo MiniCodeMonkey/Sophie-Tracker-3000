@@ -1,4 +1,5 @@
 $(function() {
+	var first = true;
 	// Only activate on the stats page
 	if (!$('body#stats').length)
 		return;
@@ -8,6 +9,13 @@ $(function() {
         widget_base_dimensions: [250, 250]
     });
 
+    // Update stats by polling for updates
+    updateStats();
+    setInterval('updateStats()', 15000);
+});
+
+function updateStats()
+{
 	$.get('stats/update', function (data) {
 		// Profile
 		$('.profile-age').html(data.profile.age + ' old');
@@ -35,7 +43,8 @@ $(function() {
 			scaleLabel: "<%=value%>",
 			scaleFontColor: "#FFF",
 			pointDotRadius: 3,
-			datasetStrokeWidth: 1
+			datasetStrokeWidth: 1,
+			animation: first
 		};
 		var diaperchart = new Chart(ctx).Line(data.diaper_graph, options);
 
@@ -120,4 +129,6 @@ $(function() {
 			}
 		});
 	});
-});
+
+	first = false;
+}
