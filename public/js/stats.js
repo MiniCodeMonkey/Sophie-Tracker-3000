@@ -23,6 +23,7 @@ $(document).ready(function() {
 		$('.diapers-available').html(data.diaper_stats.available);
 		$('.diapers-run-out-days').html(data.diaper_stats.run_out.days + '<span>days</span>');
 		$('.diapers-run-out-date').html(data.diaper_stats.run_out.date);
+		$('.diapers-average').html(Math.round(data.diaper_stats.used_per_day * 10) / 10);
 
 		// Last fed
 		$('.last-fed-icon').removeClass()

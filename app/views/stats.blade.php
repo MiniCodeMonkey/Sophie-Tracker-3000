@@ -4,7 +4,35 @@
 
 <div class="gridster">
     <ul>
-        <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="box-diaper-chart">
+    	<li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="box-profile">
+	    	<h1>Sophie Hansen</h1>
+	    	<div class="pull-left">
+		    	<img src="/img/sophie.jpg" alt="Sophie" class="img-circle">
+		    	<h1>2 weeks and 2 days old</h1>
+		    </div>
+
+	    	Hygiene
+	    	<div class="progress">
+				<div class="progress-bar progress-bar-success" role="progressbar" style="width: 60%;"></div>
+			</div>
+
+			Hunger
+	    	<div class="progress">
+				<div class="progress-bar progress-bar-success" role="progressbar" style="width: 95%;"></div>
+			</div>
+
+			Bladder
+	    	<div class="progress">
+				<div class="progress-bar progress-bar-success" role="progressbar" style="width: 80%;"></div>
+			</div>
+
+			Energy
+	    	<div class="progress">
+				<div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%;"></div>
+			</div>
+	    </li>
+
+        <li data-row="2" data-col="1" data-sizex="2" data-sizey="1" class="box-diaper-chart">
         	<ol class="legend">
 			    <li><i class="icon-sign-blank" style="color: rgb(15,87,205);"></i> Total diapers</li>
 			    <li><i class="icon-sign-blank" style="color: rgb(151,187,205);"></i> Wet only diapers</li>
@@ -15,22 +43,25 @@
         	<canvas id="diaperchart" width="500" height="180"></canvas>
 	    </li>
 
-	    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1" class="box-diaper-stats">
+	    <li data-row="1" data-col="3" data-sizex="1" data-sizey="2" class="box-diaper-stats">
 	    	<h1>Diapers left</h1>
 	    	<h2 class="diapers-available">&mdash;</h2>
 
 	    	<h1>Will run out in</h1>
 	    	<h2 class="diapers-run-out-days">&mdash;<span>days</span></h2>
-
 	    	<h3 class="diapers-run-out-date">&mdash;</h3>
+
+	    	<h1>Average</h1>
+	    	<h2 class="diapers-average">&mdash;</h2>
+	    	<h3>diapers per day</h3>
 	    </li>
 
-	    <li data-row="1" data-col="4" data-sizex="1" data-sizey="2" class="box-feed-time">
+	    <li data-row="1" data-col="4" data-sizex="1" data-sizey="1" class="box-feed-time">
 	    	<h1>Projected time until next feeding</h1>
 	    	<h2 class="feed-time-next"></h2>
 	    </li>
 
-	    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class="box-last-fed">
+	    <li data-row="2" data-col="4" data-sizex="1" data-sizey="1" class="box-last-fed">
 	    	<i class="last-fed-icon icon-tint"></i>
 	    	<h1>Last fed</h1>
 	    	<h1 class="last-fed-time"></h1>
@@ -38,8 +69,15 @@
 	    	<h1 class="last-fed-type"></h1>
 	    </li>
 
-	    <li data-row="2" data-col="2" data-sizex="2" data-sizey="1" class="box5">
+	    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1" class="box-growth-chart">
 	    	Growth chart
+	    </li>
+
+	    <li data-row="3" data-col="3" data-sizex="2" data-sizey="1" class="box-info">
+	    	Description<br />
+	    	GitHub<br />
+	    	Further information<br />
+	    	Disclaimer?
 	    </li>
     </ul>
 </div>

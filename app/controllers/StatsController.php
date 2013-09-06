@@ -184,12 +184,13 @@ class StatsController extends BaseController {
 		}
 
 		$average_diff = array_sum($timeBetween) / count($timeBetween);
-		$nextFeed = $previous->created_at->add(new DateInterval('PT'. $average_diff .'S'));
+
+		$nextFeed = $previous->created_at->add(new DateInterval('PT'. ceil($average_diff) .'S'));
 
 		return array(
 			'average_diff' => $average_diff / 3600,
 			'next_feed' => $nextFeed,
-			'next_feed_formatted' => formatDateDiff($nextFeed)
+			'next_feed_formatted' => ($nextFeed < new DateTime) ? 'soon' : formatDateDiff($nextFeed)
 		);
 	}
 

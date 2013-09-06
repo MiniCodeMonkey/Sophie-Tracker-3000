@@ -286,7 +286,7 @@
   }
 }
 #stats {
-  background-color: #333;
+  background-color: #222;
 }
 .legend {
   list-style-type: none;
@@ -295,6 +295,10 @@
   float: left;
   margin-right: 8px;
 }
+/*
+	Layout and colors are kindly inspired by Shopify's awesome Dashing dashboard
+	http://shopify.github.io/dashing/
+*/
 .gridster > ul {
   list-style-type: none;
 }
@@ -310,6 +314,7 @@
   text-align: center;
 }
 .gridster > ul > li h1 {
+  margin-top: 14px;
   font-size: 30px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
@@ -333,18 +338,30 @@
   position: absolute;
   color: rgba(255, 255, 255, 0.2);
 }
+.gridster > ul > li.box-profile {
+  background: #ec663c;
+}
 .gridster > ul > li.box-diaper-chart {
-  background: #FA6900;
+  background: #47bbb3;
 }
 .gridster > ul > li.box-diaper-stats {
-  background: #E0E4CC;
+  background: #9c4274;
+}
+.gridster > ul > li.box-diaper-stats h1 {
+  margin-top: 32px;
 }
 .gridster > ul > li.box-feed-time {
-  background: #A7DBD8;
+  background: #12b0c5;
+}
+.gridster > ul > li.box-feed-time h2 {
+  font-size: 55px;
 }
 .gridster > ul > li.box-last-fed {
-  background: #F38630;
+  background: #dc5945;
 }
-.gridster > ul > li.box5 {
-  background: #69D2E7;
+.gridster > ul > li.box-growth-chart {
+  background: #ff9618;
+}
+.gridster > ul > li.box-info {
+  background: #4b4b4b;
 }

@@ -40,8 +40,8 @@ function formatDateDiff($start, $end = null) {
         $format = array_pop($format); 
     } 
     
-    // Prepend 'since ' or whatever you like 
-    return $interval->format($format) . ' ago'; 
+    $formatted = $interval->format($format);
+    return ($start < $end) ? ($formatted . ' ago') : $formatted; 
 }
 
 function isAssoc($arr)

@@ -1,5 +1,5 @@
 #stats {
-	background-color: #333;
+	background-color: #222;
 }
 
 .legend {
@@ -11,6 +11,10 @@
 	}
 }
 
+/*
+	Layout and colors are kindly inspired by Shopify's awesome Dashing dashboard
+	http://shopify.github.io/dashing/
+*/
 .gridster {
 	>ul {
 		list-style-type: none;
@@ -26,6 +30,7 @@
 			}
 
 			h1 {
+				margin-top: 14px;
 				font-size: 30px;
 				font-weight: 400;
 				color: rgba(255, 255, 255, 0.7);
@@ -54,24 +59,40 @@
 				color: rgba(255, 255, 255, 0.2);
 			}
 
+			&.box-profile {
+				background: #ec663c;
+			}
+
 			&.box-diaper-chart {
-				background: #FA6900;
+				background: #47bbb3;
 			}
 
 			&.box-diaper-stats {
-				background: #E0E4CC;
+				background: #9c4274;
+
+				h1 {
+					margin-top: 32px;
+				}
 			}
 
 			&.box-feed-time {
-				background: #A7DBD8;
+				background: #12b0c5;
+
+				h2 {
+					font-size: 55px;
+				}
 			}
 
 			&.box-last-fed {
-				background: #F38630;
+				background: #dc5945;
 			}
 
-			&.box5 {
-				background: #69D2E7;
+			&.box-growth-chart {
+				background: #ff9618;
+			}
+
+			&.box-info {
+				background: #4b4b4b;
 			}
 		}
 	}
