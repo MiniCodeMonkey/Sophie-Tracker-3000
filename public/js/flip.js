@@ -48,6 +48,15 @@ function formatEvent(event) {
 		case 'Sleep':
 			result.description = (event.subtype == 'start') ? 'Started sleeping' : 'Stopped sleeping';
 			break;
+
+		case 'Bath':
+			result.description = 'A nice, refreshing bath';
+			break;
+
+		case 'Activity':
+			result.description = event.subtype + ' activity';
+			result.value = event.value + ' min.';
+			break;
 	}
 
 	return result;

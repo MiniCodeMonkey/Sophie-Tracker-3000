@@ -88,6 +88,9 @@
   height: 200px;
   margin: 5px;
 }
+#dashboard .primary-events button.long-text {
+  line-height: 30px;
+}
 #dashboard .primary-events button i {
   font-size: 110px !important;
 }
@@ -184,10 +187,10 @@
 }
 @-webkit-keyframes spin {
   0% {
-    -webkit-transform: rotate(-180deg) translate3d(0, 0, 0);
+    -webkit-transform: rotate(-60deg) translate3d(0, 0, 0);
   }
   100% {
-    -webkit-transform: rotate(180deg) translate3d(10px, 75px, 0);
+    -webkit-transform: rotate(60deg) translate3d(10px, 75px, 0);
   }
 }
 .sleep {
@@ -339,6 +342,9 @@
   width: 160px;
   height: 160px;
   margin: 4px;
+}
+#dashboard .modal-dialog .btn-lg.long-text {
+  line-height: 30px;
 }
 #dashboard .modal-dialog .btn-lg i {
   font-size: 88px !important;

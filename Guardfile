@@ -1,6 +1,6 @@
 guard :concat, :type => "css", :files => %w[dashboard flip icons modal notification sleep slider stats style utilities], :input_dir => "public/css", :output => "public/css/styles.min"
 
-guard :concat, :type => "js", :files => %w[Chart diaper feed flip jQuery.fastClick lastevent mobile notification pump sleep spinner stats track], :input_dir => "public/js", :output => "public/js/scripts.min"
+guard :concat, :type => "js", :files => %w[activity bath Chart diaper feed flip jQuery.fastClick lastevent mobile notification pump sleep spinner stats track], :input_dir => "public/js", :output => "public/js/scripts.min"
 
 guard :less, :all_on_start => true, :all_on_start => false, :output => 'public/css' do
 	watch(%r[^app/assets/less/(.+\.less)$])

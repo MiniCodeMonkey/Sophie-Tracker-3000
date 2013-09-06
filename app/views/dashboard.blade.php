@@ -22,9 +22,10 @@
     </p>
 </div>
 
-@include('dialogs.feed', compact('timeLevels', 'bottleLevels'))
+@include('dialogs.feed')
+@include('dialogs.pump')
 @include('dialogs.diaper')
-@include('dialogs.pump', compact('pumpLevels'))
+@include('dialogs.activity')
 
 <div class="page-header">
     <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
