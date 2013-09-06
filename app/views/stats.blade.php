@@ -21,7 +21,7 @@
 		    <div class="pull-left status-bars">
 		    	Hygiene
 		    	<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 60%;"></div>
+					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 100%;"></div>
 				</div>
 
 				Hunger
@@ -93,8 +93,8 @@
 	    </li>
 
 	    <li data-row="1" data-col="5" data-sizex="1" data-sizey="3" class="box-info">
-	    	<p>This is live data tracked using our "Sophie Tracker 3000", we are tracking diaper changes, feedings, baths and more using a touch-screen device mounted in Sophie's nursery as well as from our phones when we're out.</p>
-	    	<p>You can read more below or checkout the source code for both on GitHub.</p>
+	    	<p>This is live data tracked using our "Sophie Tracker 3000", we are tracking diaper changes, feedings, baths, sleep, activites, medicine, doctor visits, buying diapers and more using a touch-screen device mounted in Sophie's nursery as well as from our phones when we're out.</p>
+	    	<p>You can read more below or checkout the source code for this dashboard as well as the Sophie Tracker on GitHub.</p>
 	    	<p>
 	    		<a href="https://github.com/MiniCodeMonkey/Sophie-Tracker-3000" target="_blank"><i class="icon-github icon-4x"></i></a>
 	    		<a href="https://twitter.com/MathiasHansen" target="_blank"><i class="icon-twitter icon-4x"></i></a>
