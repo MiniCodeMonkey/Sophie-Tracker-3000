@@ -26,6 +26,10 @@
 @include('dialogs.pump')
 @include('dialogs.diaper')
 @include('dialogs.activity')
+@include('dialogs.medicine')
+@include('dialogs.supplies')
+@include('dialogs.milestone')
+@include('dialogs.note')
 
 <div class="page-header">
     <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
