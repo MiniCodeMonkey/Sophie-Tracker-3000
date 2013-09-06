@@ -76,10 +76,13 @@
 	    </li>
 
 	    <li data-row="3" data-col="3" data-sizex="2" data-sizey="1" class="box-info">
-	    	Description<br />
-	    	GitHub<br />
-	    	Further information<br />
-	    	Disclaimer?
+	    	<p>This is live data tracked using our "Sophie Tracker 3000", we are tracking diaper changes, feedings, baths and more using a touch-screen device mounted in Sophie's nursery as well as from our phones when we're out.</p>
+	    	<p>You can read more below or checkout the source code for both on GitHub.</p>
+	    	<p>
+	    		<a href="https://github.com/MiniCodeMonkey/Sophie-Tracker-3000" target="_blank"><i class="icon-github icon-4x"></i></a>
+	    		<a href="https://twitter.com/MathiasHansen" target="_blank"><i class="icon-twitter icon-4x"></i></a>
+	    		<a href="https://github.com/MiniCodeMonkey/Sophie-Tracker-3000/blob/master/readme.md" target="_blank"><i class="icon-info-sign icon-4x"></i></a>
+	    	</p>
 	    </li>
     </ul>
 </div>

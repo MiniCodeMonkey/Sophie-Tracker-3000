@@ -325,6 +325,10 @@
   color: rgba(255, 255, 255, 0.7);
   font-size: 22px;
 }
+.gridster > ul > li p {
+  margin: 10px;
+  font-size: 16px;
+}
 .gridster > ul > li .last-fed-icon {
   font-size: 270px;
   display: block;
@@ -387,4 +391,13 @@
 }
 .gridster > ul > li.box-info {
   background: #4b4b4b;
+}
+.gridster > ul > li.box-info a:link,
+.gridster > ul > li.box-info a:visited {
+  color: #FFF;
+  margin-right: 20px;
+}
+.gridster > ul > li.box-info a:hover {
+  color: #999;
+  text-decoration: none;
 }
