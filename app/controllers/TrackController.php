@@ -36,6 +36,22 @@ class TrackController extends BaseController {
 		));
 	}
 
+	public function postDelete()
+	{
+		// Fetch event
+		$event = TrackerEvent::findOrFail(Input::get('id'));
+
+		$response = array(
+			'success' => true,
+			'event' => $this->formatEvent($event, true)
+		);
+
+		// Delete event
+		$event->delete();
+
+		return Response::json($response);
+	}
+
 	public function getStats()
 	{
 		$result = array();
@@ -67,8 +83,10 @@ class TrackController extends BaseController {
 		return Response::json($list);
 	}
 
-	private function formatEvent($event) {
+	private function formatEvent($event, $deleted = false) {
 		return array(
+			'id' => $event->id,
+			'deleted' => $deleted,
 			'type' => array(
 				'name' => $event->type->name,
 				'icon' => $event->type->icon,

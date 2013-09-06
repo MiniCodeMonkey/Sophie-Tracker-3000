@@ -7,7 +7,7 @@
     </p>
 
     <p class="pull-right">
-        <button type="button" data-toggle="modal" data-target="#somethingModal" class="btn btn-primary">
+        <button type="button" class="btn btn-primary undo">
             <i class="icon-undo"></i> Undo
         </button>
 
@@ -48,7 +48,7 @@
                 <div class="sleep">Z</div>
                 <div class="sleep">z</div>
                 <div class="sleep">Z</div>
-                 <div class="sleep"><img src="/img/lamb.png" alt="Lamb" /></div>
+                <div class="sleep"><img src="/img/lamb.png" alt="Lamb" /></div>
                 <div class="sleep">Z</div>
                 <div class="sleep">z</div>
                 <div class="sleep">z</div>

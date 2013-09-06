@@ -15,10 +15,12 @@ function updateLastEvent()
 		if (response.sleep.type == 'start') {
 			if ($('.sleep-items').hasClass('hide')) {
 				$('.sleep-items').removeClass('hide');
+				$('body, .face.front').animate({ backgroundColor: '#D8D8D8' });
 			}
 		} else {
 			if (!$('.sleep-items').hasClass('hide')) {
 				$('.sleep-items').addClass('hide');
+				$('body, .face.front').animate({ backgroundColor: '#FFF' });
 			}
 		}
 	});

@@ -37,3 +37,20 @@ function trackEvent(activeModal, type, subtype, value)
 		}
 	});
 }
+
+function deleteEvent(eventId)
+{
+	// Perform AJAX request
+	$.post('track/delete', {
+		id: eventId
+	}, function (response) {
+		// Show response
+		if (response.success && response.success == true) {
+			showNotification(response.event);
+			
+			updateLastEvent(); // Update the last feed/pump/diaper stats
+		} else {
+			showNotification(type, true);
+		}
+	});
+}
