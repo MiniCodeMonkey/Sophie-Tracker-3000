@@ -1,4 +1,8 @@
-$(document).ready(function() {
+$(function() {
+	// Only activate on the stats page
+	if (!$('body#stats').length)
+		return;
+
 	$(".gridster ul").gridster({
         widget_margins: [10, 10],
         widget_base_dimensions: [250, 250]
