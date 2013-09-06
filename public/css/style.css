@@ -489,7 +489,11 @@
 .gridster > ul > li.box-day-chart {
   background: #ff9618;
 }
+.gridster > ul > li.box-day-chart .legend {
+  margin: 0 0 10px 15px;
+}
 .gridster > ul > li.box-day-chart .progress {
+  margin: 0 12px;
   position: relative;
 }
 .gridster > ul > li.box-day-chart .progress .progress-bar {

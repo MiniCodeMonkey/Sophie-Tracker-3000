@@ -71,7 +71,7 @@
 	    	<h1 class="last-fed-type"></h1>
 	    </li>
 
-	    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1" class="box-day-chart">
+	    <li data-row="3" data-col="1" data-sizex="4" data-sizey="1" class="box-day-chart">
 	    	<h1>Today</h1>
 
 			<ol class="legend clearfix">
@@ -82,10 +82,10 @@
 			</ol>
 
 	    	<div class="progress"></div>
-	    	<p class="chart-description"></p>
+	    	<p class="chart-description">Click on a segment to get detailed information</p>
 	    </li>
 
-	    <li data-row="3" data-col="3" data-sizex="2" data-sizey="1" class="box-info">
+	    <li data-row="1" data-col="5" data-sizex="1" data-sizey="3" class="box-info">
 	    	<p>This is live data tracked using our "Sophie Tracker 3000", we are tracking diaper changes, feedings, baths and more using a touch-screen device mounted in Sophie's nursery as well as from our phones when we're out.</p>
 	    	<p>You can read more below or checkout the source code for both on GitHub.</p>
 	    	<p>

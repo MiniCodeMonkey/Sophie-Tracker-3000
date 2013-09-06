@@ -14,7 +14,8 @@
 .gridster>ul>li.box-diaper-stats{background:#9c4274;}.gridster>ul>li.box-diaper-stats h1{margin-top:32px;}
 .gridster>ul>li.box-feed-time{background:#12b0c5;}.gridster>ul>li.box-feed-time h2{font-size:55px;}
 .gridster>ul>li.box-last-fed{background:#dc5945;}
-.gridster>ul>li.box-day-chart{background:#ff9618;}.gridster>ul>li.box-day-chart .progress{position:relative;}.gridster>ul>li.box-day-chart .progress .progress-bar{cursor:pointer;position:absolute;top:0;}
+.gridster>ul>li.box-day-chart{background:#ff9618;}.gridster>ul>li.box-day-chart .legend{margin:0 0 10px 15px;}
+.gridster>ul>li.box-day-chart .progress{margin:0 12px;position:relative;}.gridster>ul>li.box-day-chart .progress .progress-bar{cursor:pointer;position:absolute;top:0;}
 .gridster>ul>li.box-day-chart .chart-description strong{display:block;}
 .gridster>ul>li.box-info{background:#4b4b4b;}.gridster>ul>li.box-info a:link,.gridster>ul>li.box-info a:visited{color:#FFF;margin-right:20px;}
 .gridster>ul>li.box-info a:hover{color:#999;text-decoration:none;}

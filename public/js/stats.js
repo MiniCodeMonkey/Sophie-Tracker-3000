@@ -47,7 +47,6 @@ $(function() {
 			amount = data.last_fed.value + '<span>oz.</span>';
 		}
 		$('.last-fed-amount').html(amount);
-		$('.last-fed-type').html(data.last_fed.type);
 
 		// Projected time until next feeding
 		$('.feed-time-next').html(data.feed_time.next_feed_formatted);

@@ -230,6 +230,7 @@ class StatsController extends BaseController {
 					if ($result[$i]['type'] == 'Sleep' && $result[$i]['subtype'] == 'start') {
 						$percent = ($event->created_at->getTimestamp() - $result[$i]['timestamp']) / (3600 * 24);
 						$result[$i]['width'] = $percent;
+						$result[$i]['value'] = floor(($event->created_at->getTimestamp() - $result[$i]['timestamp']) / 60);
 						break;
 					} 
 				}

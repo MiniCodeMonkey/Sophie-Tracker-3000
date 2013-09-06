@@ -40,7 +40,12 @@ $('#list-button').fastClick(function() {
 function formatEvent(event) {
 	var result = {};
 
+	// Depending on the input event object the event name may have a different property acessor
 	var eventTypeName = event.type.name || event.type;
+
+	// Set default values
+	result.description = '';
+	result.value = '';
 
 	switch (eventTypeName) {
 		case 'Feed':
@@ -55,11 +60,17 @@ function formatEvent(event) {
 
 		case 'Diaper':
 			result.description = 'Changed ' + (event.subtype == 'both' ? 'wet and dirty' : event.subtype) + ' diaper';
-			result.value = '';
 			break;
 
 		case 'Sleep':
 			result.description = (event.subtype == 'start') ? 'Started sleeping' : 'Stopped sleeping';
+			if (event.value) {
+				if (event.value > 60) {
+					result.value = Math.floor(event.value / 60) + ' hours';
+				} else {
+					result.value = event.value + ' min.';
+				}
+			}
 			break;
 
 		case 'Activity':
