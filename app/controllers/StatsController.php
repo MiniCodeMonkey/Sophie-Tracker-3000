@@ -10,11 +10,19 @@ class StatsController extends BaseController {
 	public function getUpdate()
 	{
 		return Response::json(array(
+			'profile' => $this->profile(),
 			'diaper_graph' => $this->diaperGraph(),
 			'diaper_stats' => $this->diaperStats(),
 			'last_fed' => $this->lastFed(),
-			'feed_time' => $this->feedTime()
+			'feed_time' => $this->feedTime(),
 		));
+	}
+
+	private function profile()
+	{
+		return array(
+			'age' => formatAge(new DateTime('2013-08-20 20:59:00'))
+		);
 	}
 
 	private function diaperGraph()

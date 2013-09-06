@@ -5,6 +5,9 @@ $(document).ready(function() {
     });
 
 	$.get('stats/update', function (data) {
+		// Profile
+		$('.profile-age').html(data.profile.age + ' old');
+
 		// Diaper graph
 		var ctx = $("#diaperchart").get(0).getContext("2d");
 		var options = {

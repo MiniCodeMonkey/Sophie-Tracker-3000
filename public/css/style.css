@@ -341,6 +341,27 @@
 .gridster > ul > li.box-profile {
   background: #ec663c;
 }
+.gridster > ul > li.box-profile > h1 {
+  margin-top: 4px;
+  margin-bottom: 7px;
+}
+.gridster > ul > li.box-profile .status-bars {
+  width: 350px;
+}
+.gridster > ul > li.box-profile .status-bars .progress {
+  margin-bottom: 10px;
+}
+.gridster > ul > li.box-profile .info {
+  width: 130px;
+}
+.gridster > ul > li.box-profile .info img {
+  display: block;
+  margin: 0 auto;
+}
+.gridster > ul > li.box-profile .info h1 {
+  font-size: 20px;
+  margin: 0 15px;
+}
 .gridster > ul > li.box-diaper-chart {
   background: #47bbb3;
 }

@@ -44,6 +44,37 @@ function formatDateDiff($start, $end = null) {
     return ($start < $end) ? ($formatted . ' ago') : $formatted; 
 }
 
+function formatAge($born) { 
+    if (!($born instanceof DateTime)) { 
+        $start = new DateTime($born); 
+    } else {
+        $start = $born;
+    }
+    
+    $end = new DateTime; 
+    
+    $interval = $end->diff($start); 
+    $format = array(); 
+    if ($interval->y !== 0) { 
+        $format[] = '%y ' . (($interval->y == 1) ? 'year' : 'years'); 
+    } 
+    if ($interval->m !== 0) { 
+        $format[] = '%m ' . (($interval->m == 1) ? 'month' : 'months'); 
+    }
+    if ($interval->d !== 0) {
+        $format[] = '%d ' . (($interval->d == 1) ? 'day' : 'days'); 
+    } 
+    
+    // We use the two biggest parts 
+    if (count($format) > 1) { 
+        $format = array_shift($format)." and ".array_shift($format); 
+    } else { 
+        $format = array_pop($format); 
+    } 
+
+    return $interval->format($format);
+}
+
 function isAssoc($arr)
 {
     return array_keys($arr) !== range(0, count($arr) - 1);

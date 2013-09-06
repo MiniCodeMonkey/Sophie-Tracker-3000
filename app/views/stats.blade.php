@@ -5,30 +5,32 @@
 <div class="gridster">
     <ul>
     	<li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="box-profile">
-	    	<h1>Sophie Hansen</h1>
-	    	<div class="pull-left">
+	    	<h1>Baby Sophie</h1>
+	    	<div class="pull-left info">
 		    	<img src="/img/sophie.jpg" alt="Sophie" class="img-circle">
-		    	<h1>2 weeks and 2 days old</h1>
+		    	<h1 class="profile-age"></h1>
 		    </div>
 
-	    	Hygiene
-	    	<div class="progress">
-				<div class="progress-bar progress-bar-success" role="progressbar" style="width: 60%;"></div>
-			</div>
+		    <div class="pull-left status-bars">
+		    	Hygiene
+		    	<div class="progress">
+					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 60%;"></div>
+				</div>
 
-			Hunger
-	    	<div class="progress">
-				<div class="progress-bar progress-bar-success" role="progressbar" style="width: 95%;"></div>
-			</div>
+				Hunger
+		    	<div class="progress">
+					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 95%;"></div>
+				</div>
 
-			Bladder
-	    	<div class="progress">
-				<div class="progress-bar progress-bar-success" role="progressbar" style="width: 80%;"></div>
-			</div>
+				Bladder
+		    	<div class="progress">
+					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 80%;"></div>
+				</div>
 
-			Energy
-	    	<div class="progress">
-				<div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%;"></div>
+				Energy
+		    	<div class="progress">
+					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%;"></div>
+				</div>
 			</div>
 	    </li>
 
