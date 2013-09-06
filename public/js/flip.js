@@ -40,9 +40,11 @@ $('#list-button').fastClick(function() {
 function formatEvent(event) {
 	var result = {};
 
-	switch (event.type.name) {
+	var eventTypeName = event.type.name || event.type;
+
+	switch (eventTypeName) {
 		case 'Feed':
-			result.description = event.type.name + ' (' + event.subtype + ')';
+			result.description = eventTypeName + ' (' + event.subtype + ')';
 			result.value = (event.subtype == 'left' || event.subtype == 'right') ? event.value + ' min.' : event.value + ' oz';
 			break;
 

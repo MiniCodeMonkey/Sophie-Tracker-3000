@@ -48,6 +48,17 @@
 				font-size: 16px;
 			}
 
+			.legend {
+				list-style-type: none;
+				margin: 0 0 0 32px;
+				padding: 0;
+
+				li {
+					float: left;
+					margin-right: 22px;
+				}
+			}
+
 			.last-fed-icon {
 				font-size: 270px;
 				display: block;
@@ -88,17 +99,6 @@
 
 			&.box-diaper-chart {
 				background: #47bbb3;
-
-				.legend {
-					list-style-type: none;
-					margin: 0 0 0 32px;
-					padding: 0;
-
-					li {
-						float: left;
-						margin-right: 22px;
-					}
-				}
 			}
 
 			&.box-diaper-stats {
@@ -121,8 +121,24 @@
 				background: #dc5945;
 			}
 
-			&.box-growth-chart {
+			&.box-day-chart {
 				background: #ff9618;
+
+				.progress {
+					position: relative;
+
+					.progress-bar {
+						cursor: pointer;
+						position: absolute;
+						top: 0;
+					}
+				}
+
+				.chart-description {
+					strong {
+						display: block;
+					}
+				}
 			}
 
 			&.box-info {

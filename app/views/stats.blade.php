@@ -71,8 +71,18 @@
 	    	<h1 class="last-fed-type"></h1>
 	    </li>
 
-	    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1" class="box-growth-chart">
-	    	Growth chart
+	    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1" class="box-day-chart">
+	    	<h1>Today</h1>
+
+			<ol class="legend clearfix">
+				<li><i class="icon-sign-blank text-info"></i> Feed or Bath</li>
+				<li><i class="icon-sign-blank text-success"></i> Diaper</li>
+				<li><i class="icon-sign-blank text-warning"></i> Sleep or Activity</li>
+				<li><i class="icon-sign-blank text-danger"></i> Medicine</li>
+			</ol>
+
+	    	<div class="progress"></div>
+	    	<p class="chart-description"></p>
 	    </li>
 
 	    <li data-row="3" data-col="3" data-sizex="2" data-sizey="1" class="box-info">

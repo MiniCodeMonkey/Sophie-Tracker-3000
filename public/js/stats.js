@@ -51,5 +51,61 @@ $(function() {
 
 		// Projected time until next feeding
 		$('.feed-time-next').html(data.feed_time.next_feed_formatted);
+
+		// Day chart
+		$.each(data.day_chart, function (index, event) {
+			var colorName = null;
+			switch (event.type) {
+				case 'Feed':
+					colorName = 'info';
+					break;
+
+				case 'Diaper':
+					colorName = 'success';
+					break;
+					
+				case 'Sleep':
+					colorName = 'warning';
+					break;
+					
+				case 'Activity':
+					colorName = 'warning';
+					break;
+					
+				case 'Medicine':
+					colorName = 'danger';
+					break;
+					
+				case 'Bath':
+					colorName = 'info';
+					break;
+					
+			}
+
+			if (colorName != null) {
+				var bar = $('<div>')
+					.addClass('progress-bar')
+					.addClass('progress-bar-' + colorName)
+					.css('width', (event.width * 100.0) + '%')
+					.css('left', (event.time_percent * 100.0) + '%')
+					.data('event', event);
+
+				bar.fastClick(function() {
+					var event = $(this).data('event');
+					var formattedEvent = formatEvent(event);
+					$('.box-day-chart .chart-description').html('<strong>' + event.time + '</strong>');
+
+					var description = (formattedEvent.description == 'Started sleeping' ? 'Sleeping' : formattedEvent.description);
+
+					$('.box-day-chart .chart-description').append(description);
+
+					if (formattedEvent.value) {
+						$('.box-day-chart .chart-description').append('&mdash; ' + formattedEvent.value)
+					}
+				});
+
+				$('.box-day-chart .progress').append(bar);
+			}
+		});
 	});
 });

@@ -9,19 +9,27 @@ class StatsController extends BaseController {
 
 	public function getUpdate()
 	{
+		$profile = $this->profile();
 		return Response::json(array(
-			'profile' => $this->profile(),
+			'profile' => $profile,
 			'diaper_graph' => $this->diaperGraph(),
 			'diaper_stats' => $this->diaperStats(),
 			'last_fed' => $this->lastFed(),
 			'feed_time' => $this->feedTime(),
+			'day_chart' => $this->dayChart($profile['sleeping']),
 		));
 	}
 
 	private function profile()
 	{
+		$sleepType = EventType::where('name', 'Sleep')->firstOrFail();
+		$lastSleep = $sleepType->events()
+			->orderBy('created_at', 'DESC')
+			->first();
+
 		return array(
-			'age' => formatAge(new DateTime('2013-08-20 20:59:00'))
+			'age' => formatAge(new DateTime('2013-08-20 20:59:00')),
+			'sleeping' => ($lastSleep->subtype == 'start')
 		);
 	}
 
@@ -200,6 +208,67 @@ class StatsController extends BaseController {
 			'next_feed' => $nextFeed,
 			'next_feed_formatted' => ($nextFeed < new DateTime) ? 'soon' : formatDateDiff($nextFeed)
 		);
+	}
+
+	private function dayChart($isSleeping)
+	{
+		$start = new DateTime('today midnight');
+		$end = clone $start;
+		$end->add(new DateInterval('PT24H'));
+
+		$events = TrackerEvent::where('created_at', '>', $start)
+			->orderBy('created_at', 'ASC')
+			->get();
+
+		$result = array();
+		foreach ($events as $event) {
+			$percent = ($event->created_at->getTimestamp() - $start->getTimestamp()) / (3600 * 24);
+
+			if ($event->type->name == 'Sleep' && $event->subtype == 'end') {
+				// Find last sleep start and update the the width
+				for ($i = count($result) - 1; $i > 0; $i--) {
+					if ($result[$i]['type'] == 'Sleep' && $result[$i]['subtype'] == 'start') {
+						$percent = ($event->created_at->getTimestamp() - $result[$i]['timestamp']) / (3600 * 24);
+						$result[$i]['width'] = $percent;
+						break;
+					} 
+				}
+			} else {
+				$width = 0.01;
+
+				if ($event->type->name == 'Feed') {
+					if ($event->subtype == 'left' || $event->subtype == 'right') {
+						$width = 0.005 * ($event->value / 8);
+					} else {
+						$width = 0.005 * $event->value;
+					}
+				}
+				$result[] = array(
+					'type' => $event->type->name,
+					'timestamp' => $event->created_at->getTimestamp(),
+					'time' => $event->created_at->format('g:ia'),
+					'time_percent' => $percent,
+					'width' => $width,
+					'subtype' => $event->subtype,
+					'value' => $event->value
+				);
+			}
+		}
+
+		// If sleeping, set last "start" sleep to end at current timestamp in the output
+		if ($isSleeping) {
+			// Find last sleep start and update the the width
+			$now = new DateTime;
+			for ($i = count($result) - 1; $i > 0; $i--) {
+				if ($result[$i]['type'] == 'Sleep' && $result[$i]['subtype'] == 'start') {
+					$percent = ($now->getTimestamp() - $result[$i]['timestamp']) / (3600 * 24);
+					$result[$i]['width'] = $percent;
+					break;
+				} 
+			}
+		}
+
+		return $result;
 	}
 
 	private function constructData($labels, $data) {
