@@ -7,6 +7,13 @@
     	<li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="box-profile">
 	    	<h1>Baby Sophie</h1>
 	    	<div class="pull-left info">
+	    		<div class="sleep-items hide">    
+	                <div class="sleep">Z</div>
+	                <div class="sleep">Z</div>
+	                <div class="sleep">z</div>
+	                <div class="sleep">Z</div>
+	            </div>
+
 		    	<img src="/img/sophie.jpg" alt="Sophie" class="img-circle">
 		    	<h1 class="profile-age"></h1>
 		    </div>

@@ -12,6 +12,13 @@ $(function() {
 		// Profile
 		$('.profile-age').html(data.profile.age + ' old');
 
+		if (data.profile.sleeping) {
+			$('.box-profile .sleep-items').removeClass('hide');
+			$('.profile-age').append('<span>Sleeping (ssh!)</span>');
+		} else {
+			$('.box-profile .sleep-items').addClass('hide');
+		}
+
 		// Diaper graph
 		var ctx = $("#diaperchart").get(0).getContext("2d");
 		var options = {

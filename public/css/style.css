@@ -201,11 +201,8 @@
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: normal;
   -webkit-animation-timing-function: ease-in;
-}
-.sleep {
   color: #333;
   font-size: 2em;
-  position: absolute;
 }
 .sleep:first-child {
   left: 10%;
@@ -458,7 +455,11 @@
   margin-bottom: 10px;
 }
 .gridster > ul > li.box-profile .info {
+  position: relative;
   width: 130px;
+}
+.gridster > ul > li.box-profile .info .sleep {
+  color: #EEE;
 }
 .gridster > ul > li.box-profile .info img {
   display: block;
@@ -467,6 +468,11 @@
 .gridster > ul > li.box-profile .info h1 {
   font-size: 20px;
   margin: 0 15px;
+}
+.gridster > ul > li.box-profile .info h1 span {
+  margin-top: 8px;
+  display: block;
+  font-size: 14px;
 }
 .gridster > ul > li.box-diaper-chart {
   background: #47bbb3;
