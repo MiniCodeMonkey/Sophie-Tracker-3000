@@ -36,13 +36,13 @@
 
         <li data-row="2" data-col="1" data-sizex="2" data-sizey="1" class="box-diaper-chart">
         	<ol class="legend">
-			    <li><i class="icon-sign-blank" style="color: rgb(15,87,205);"></i> Total diapers</li>
-			    <li><i class="icon-sign-blank" style="color: rgb(151,187,205);"></i> Wet only diapers</li>
-			    <li><i class="icon-sign-blank" style="color: rgb(151,100,205);"></i> Dirty only diapers</li>
-			    <li><i class="icon-sign-blank" style="color: rgb(151,187,120);"></i> Both wet & dirty diapers</li>
+			    <li><i class="icon-sign-blank" style="color: rgb(255,255,255);"></i> Total diapers</li>
+			    <li><i class="icon-sign-blank" style="color: rgb(200,200,200);"></i> Wet only</li>
+			    <li><i class="icon-sign-blank" style="color: rgb(110,110,110);"></i> Dirty only</li>
+			    <li><i class="icon-sign-blank" style="color: rgb(50,50,50);"></i> Both wet & dirty</li>
 			</ol>
 
-        	<canvas id="diaperchart" width="500" height="180"></canvas>
+        	<canvas id="diaperchart" width="520" height="210"></canvas>
 	    </li>
 
 	    <li data-row="1" data-col="3" data-sizex="1" data-sizey="2" class="box-diaper-stats">

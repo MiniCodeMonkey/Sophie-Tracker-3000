@@ -2,15 +2,6 @@
 	background-color: #222;
 }
 
-.legend {
-	list-style-type: none;
-
-	li {
-		float: left;
-		margin-right: 8px;
-	}
-}
-
 /*
 	Layout and colors are kindly inspired by Shopify's awesome Dashing dashboard
 	http://shopify.github.io/dashing/
@@ -92,6 +83,17 @@
 
 			&.box-diaper-chart {
 				background: #47bbb3;
+
+				.legend {
+					list-style-type: none;
+					margin: 0 0 0 32px;
+					padding: 0;
+
+					li {
+						float: left;
+						margin-right: 22px;
+					}
+				}
 			}
 
 			&.box-diaper-stats {

@@ -1,5 +1,4 @@
 #stats{background-color:#222;}
-.legend{list-style-type:none;}.legend li{float:left;margin-right:8px;}
 .gridster>ul{list-style-type:none;}.gridster>ul>li{color:#FFF;font-family:'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;}.gridster>ul>li h1,.gridster>ul>li h2,.gridster>ul>li h3{margin:0;padding:0;text-align:center;}
 .gridster>ul>li h1{margin-top:14px;font-size:30px;font-weight:400;color:rgba(255, 255, 255, 0.7);}
 .gridster>ul>li h2{text-transform:uppercase;font-size:70px;font-weight:700;}.gridster>ul>li h2 span{font-size:25px;text-transform:none;}
@@ -9,7 +8,7 @@
 .gridster>ul>li.box-profile .status-bars{width:350px;}.gridster>ul>li.box-profile .status-bars .progress{margin-bottom:10px;}
 .gridster>ul>li.box-profile .info{width:130px;}.gridster>ul>li.box-profile .info img{display:block;margin:0 auto;}
 .gridster>ul>li.box-profile .info h1{font-size:20px;margin:0 15px;}
-.gridster>ul>li.box-diaper-chart{background:#47bbb3;}
+.gridster>ul>li.box-diaper-chart{background:#47bbb3;}.gridster>ul>li.box-diaper-chart .legend{list-style-type:none;margin:0 0 0 32px;padding:0;}.gridster>ul>li.box-diaper-chart .legend li{float:left;margin-right:22px;}
 .gridster>ul>li.box-diaper-stats{background:#9c4274;}.gridster>ul>li.box-diaper-stats h1{margin-top:32px;}
 .gridster>ul>li.box-feed-time{background:#12b0c5;}.gridster>ul>li.box-feed-time h2{font-size:55px;}
 .gridster>ul>li.box-last-fed{background:#dc5945;}
