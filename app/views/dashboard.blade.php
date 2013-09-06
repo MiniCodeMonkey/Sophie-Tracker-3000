@@ -11,8 +11,8 @@
             <i class="icon-undo"></i> Undo
         </button>
 
-        <button type="button" data-toggle="modal" data-target="#somethingModal" class="btn btn-primary">
-            <i class="icon-plus"></i> Add details
+        <button type="button" data-toggle="modal" data-target="#detailsModal" class="btn btn-primary details">
+            <i class="icon-time"></i> Change time
         </button>
     </p>
 </div>
@@ -22,6 +22,7 @@
     </p>
 </div>
 
+@include('dialogs.details')
 @include('dialogs.feed')
 @include('dialogs.pump')
 @include('dialogs.diaper')

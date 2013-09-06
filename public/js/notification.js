@@ -5,7 +5,7 @@ function showNotification(event, error) {
 	var selector = error ? '#error-notification' : '#success-notification';
 
 	if (!error) {
-		if (event.deleted) {
+		if (event.reverted) {
 			$(selector + ' .lead strong').html('Reverted:');
 			$(selector + ' .undo').hide();
 			$(selector).removeClass('alert-info')
@@ -37,5 +37,12 @@ function showNotification(event, error) {
 $('#success-notification .undo').fastClick(function () {
 	deleteEvent($('#success-notification').data('event-id'));
 
+	return false;
+});
+
+$('#detailsModal button.save').fastClick(function () {
+	updateEvent($('#success-notification').data('event-id'), $(this).parent().find('.spinner').data('value'));
+	$('#detailsModal').modal('hide');
+	
 	return false;
 });

@@ -52,6 +52,22 @@ class TrackController extends BaseController {
 		return Response::json($response);
 	}
 
+	public function postUpdate()
+	{
+		// Fetch event
+		$event = TrackerEvent::findOrFail(Input::get('id'));
+		$newCreatedAt = $event->created_at->sub(new DateInterval('PT' . Input::get('minutes') . 'M'));
+		$event->created_at = $newCreatedAt;
+		$event->save();
+
+		$response = array(
+			'success' => true,
+			'event' => $this->formatEvent($event, true)
+		);
+
+		return Response::json($response);
+	}
+
 	public function getStats()
 	{
 		$result = array();
@@ -83,10 +99,10 @@ class TrackController extends BaseController {
 		return Response::json($list);
 	}
 
-	private function formatEvent($event, $deleted = false) {
+	private function formatEvent($event, $reverted = false) {
 		return array(
 			'id' => $event->id,
-			'deleted' => $deleted,
+			'reverted' => $reverted,
 			'type' => array(
 				'name' => $event->type->name,
 				'icon' => $event->type->icon,
