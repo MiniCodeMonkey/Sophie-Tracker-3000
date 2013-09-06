@@ -1,11 +1,18 @@
 function trackEvent(activeModal, type, subtype, value)
 {
-	// Create and add loading indicator
-	var spinner = $('<i>')
-		.addClass('icon-spinner')
-		.addClass('icon-spin')
-		.addClass('icon-2x');
-	activeModal.find('.modal-body').append(spinner);
+	type = type || '';
+	subtype = subtype || '';
+	value = value || '';
+
+	if (activeModal) {
+		// Create and add loading indicator
+		var spinner = $('<i>')
+			.addClass('icon-spinner')
+			.addClass('icon-spin')
+			.addClass('icon-2x');
+
+			activeModal.find('.modal-body').append(spinner);
+	}
 
 	// Perform AJAX request
 	$.post('track/new', {
@@ -14,12 +21,16 @@ function trackEvent(activeModal, type, subtype, value)
 		value: value
 	}, function (response) {
 		// Remove loading indicator
-		spinner.remove();
+		if (spinner)
+			spinner.remove();
 
 		// Show response
 		if (response.success && response.success == true) {
-			showNotification(type);
-			activeModal.modal('hide');
+			showNotification(response.event);
+			
+			if (activeModal)
+				activeModal.modal('hide');
+			
 			updateLastEvent(); // Update the last feed/pump/diaper stats
 		} else {
 			showNotification(type, true);

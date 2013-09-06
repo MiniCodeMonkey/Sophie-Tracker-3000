@@ -1,0 +1,74 @@
+/* Based on: http://jsfiddle.net/girlie_mac/gFKxW/ */
+@-webkit-keyframes fade {
+    0%   { opacity: 0; }
+    10%  { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+@-webkit-keyframes fall {
+    from { top: 5%; }
+    to { top: 70%; }
+}
+@-webkit-keyframes accumulate {
+    from { height: 0px; opacity: 0 }
+    to { height: 20px; opacity: .75; }
+}
+@-webkit-keyframes spin {
+    0%   { -webkit-transform: rotate(-180deg) translate3d(0, 0, 0);}
+    100% { -webkit-transform: rotate(180deg) translate3d(10px, 75px, 0);}
+}
+.sleep {
+    -webkit-transform: translate3d(0, 0, 0);
+    position: absolute;
+    top: -40px;
+    -webkit-animation-name: fall, fade, spin;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal; 
+    -webkit-animation-timing-function: ease-in;
+}
+.sleep {
+    color: #333;
+    font-size: 2em;
+    position: absolute;    
+}
+.sleep:first-child{
+    left: 10%;
+    -webkit-animation-duration: 5s;   
+}
+.sleep:nth-child(2) {
+    font-size: 2.8em;
+    left: 20%;
+    -webkit-animation-duration: 7s;    
+}
+.sleep:nth-child(3) {
+    left: 30%;
+    -webkit-animation-duration: 8s;    
+}
+.sleep:nth-child(4) {
+    font-size: 3.9em;
+    left: 40%;
+    -webkit-animation-duration: 6s;    
+}
+.sleep:nth-child(5) {
+    left: 50%;
+    -webkit-animation-duration: 11s;    
+}
+.sleep:nth-child(6) {
+    font-size: 2.8em;
+    left: 60%;
+    -webkit-animation-duration: 8s;    
+}
+.sleep:nth-child(7) {
+    font-size: 3.9em;
+    left: 70%;
+    -webkit-animation-duration: 6s;    
+}
+.sleep:nth-child(8) {
+    font-size: 2.8em;
+    left: 80%;
+    -webkit-animation-duration: 9s;    
+}
+.sleep:nth-child(9) {
+    font-size: 3.9em;
+    left: 90%;
+    -webkit-animation-duration: 12s;    
+}

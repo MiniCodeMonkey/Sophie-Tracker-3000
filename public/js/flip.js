@@ -44,6 +44,10 @@ function formatEvent(event) {
 			result.description = 'Pumped ' + event.subtype;
 			result.value = event.value + ' oz';
 			break;
+
+		case 'Sleep':
+			result.description = (event.subtype == 'start') ? 'Started sleeping' : 'Stopped sleeping';
+			break;
 	}
 
 	return result;

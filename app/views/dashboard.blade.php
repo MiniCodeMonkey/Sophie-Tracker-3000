@@ -3,7 +3,7 @@
 @section('content')
 <div id="success-notification" class="alert alert-info">
     <p class="pull-left lead">
-        <strong class="event-type">EventName</strong> event was tracked!
+        <strong>Saved:</strong> <span class="event-type">EventName</span>
     </p>
 
     <p class="pull-right">
@@ -18,7 +18,7 @@
 </div>
 <div id="error-notification" class="alert alert-danger">
     <p class="lead">
-        <strong class="event-type">EventName</strong> event could not be tracked!
+        "<span class="event-type">EventName</span>" could not be tracked!
     </p>
 </div>
 
@@ -37,6 +37,18 @@
 <div class="flip"> 
     <div class="card"> 
         <div class="face front">
+            <div class="sleep-items hide">    
+                <div class="sleep">Z</div>
+                <div class="sleep"><img src="/img/lamb.png" alt="Lamb" /></div>
+                <div class="sleep">Z</div>
+                <div class="sleep">z</div>
+                <div class="sleep">Z</div>
+                 <div class="sleep"><img src="/img/lamb.png" alt="Lamb" /></div>
+                <div class="sleep">Z</div>
+                <div class="sleep">z</div>
+                <div class="sleep">z</div>
+            </div>
+
             @foreach ($eventTypeCategories as $eventTypeCategory => $eventTypes)
                 <div class="{{ $eventTypeCategory }}-events">
                     @foreach ($eventTypes as $eventType)
