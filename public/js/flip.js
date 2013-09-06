@@ -1,4 +1,4 @@
-$('#list-button').click(function() {
+$('#list-button').fastClick(function() {
 	if ($('.card').hasClass('flipped')) {
 		$('.card').removeClass('flipped');
 		$(this).find('i').removeClass('icon-arrow-left').addClass('icon-list');

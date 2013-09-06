@@ -1,5 +1,5 @@
 $(function () {
-	$('.spinner .spinner-left').click(function () {
+	$('.spinner .spinner-left').fastClick(function () {
 		var currentValue = $(this).parent().data('value');
 		var step = $(this).parent().data('step');
 
@@ -11,7 +11,7 @@ $(function () {
 		}
 	});
 
-	$('.spinner .spinner-right').click(function () {
+	$('.spinner .spinner-right').fastClick(function () {
 		var currentValue = $(this).parent().data('value');
 		var step = $(this).parent().data('step');
 

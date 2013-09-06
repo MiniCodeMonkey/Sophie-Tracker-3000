@@ -13,7 +13,7 @@ $(function() {
 		$('#feedModal .time-options').addClass('hide');
 	});
 
-	$('#feedModal .feed-types button').click(function () {
+	$('#feedModal .feed-types button').fastClick(function () {
 		// Reset all button states
 		$('#feedModal .feed-types button')
 			.removeClass('btn-primary')
@@ -36,7 +36,7 @@ $(function() {
 		return false;
 	});
 
-	$('#feedModal button.save').click(function () {
+	$('#feedModal button.save').fastClick(function () {
 		trackEvent($('#feedModal'), 'Feed', feedType, $(this).parent().find('.spinner').data('value'));
 		return false;
 	});

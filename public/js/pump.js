@@ -12,7 +12,7 @@ $(function() {
 		$('#pumpModal .pump-options').addClass('hide');
 	});
 
-	$('#pumpModal .pump-types button').click(function () {
+	$('#pumpModal .pump-types button').fastClick(function () {
 		// Reset all button states
 		$('#pumpModal .pump-types button')
 			.removeClass('btn-primary')
@@ -29,7 +29,7 @@ $(function() {
 		return false;
 	});
 
-	$('#pumpModal button.save').click(function () {
+	$('#pumpModal button.save').fastClick(function () {
 		trackEvent($('#pumpModal'), 'Pump', pumpType, $(this).parent().find('.spinner').data('value'));
 		return false;
 	});
