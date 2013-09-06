@@ -48,7 +48,7 @@ class StatsController extends BaseController {
 				'hygiene' => 1.0 - (($now->getTimestamp() - $last['bath']['timestamp']) / 3600 / 240),
 				'hunger' => 1.0 - (($now->getTimestamp() - $last['feed']['timestamp']) / 3600 / 20),
 				'bladder' => 1.0 - (($now->getTimestamp() - $last['diaper']['timestamp']) / 3600 / 10),
-				'energy' => 1.0 - (($now->getTimestamp() - $last['sleep']['timestamp']) / 3600 / 8),
+				'energy' => 1.0 - (($now->getTimestamp() - $last['sleep']['timestamp']) / 3600 / 5),
 			)
 		);
 	}
