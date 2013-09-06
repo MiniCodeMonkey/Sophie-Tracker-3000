@@ -20,23 +20,23 @@
 
 		    <div class="pull-left status-bars">
 		    	Hygiene
-		    	<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 100%;"></div>
+		    	<div class="progress progress-striped">
+					<div class="progress-bar progress-bar-success profile-hygiene" role="progressbar" style="width: 0%;"></div>
 				</div>
 
 				Hunger
-		    	<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 95%;"></div>
+		    	<div class="progress progress-striped">
+					<div class="progress-bar progress-bar-success profile-hunger" role="progressbar" style="width: 0%;"></div>
 				</div>
 
 				Bladder
-		    	<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 80%;"></div>
+		    	<div class="progress progress-striped">
+					<div class="progress-bar progress-bar-success profile-bladder" role="progressbar" style="width: 0%;"></div>
 				</div>
 
 				Energy
-		    	<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" style="width: 90%;"></div>
+		    	<div class="progress progress-striped">
+					<div class="progress-bar progress-bar-success profile-energy" role="progressbar" style="width: 0%;"></div>
 				</div>
 			</div>
 	    </li>

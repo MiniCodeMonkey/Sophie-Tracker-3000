@@ -22,14 +22,34 @@ class StatsController extends BaseController {
 
 	private function profile()
 	{
-		$sleepType = EventType::where('name', 'Sleep')->firstOrFail();
-		$lastSleep = $sleepType->events()
-			->orderBy('created_at', 'DESC')
-			->first();
+		$now = new DateTime;
+		$last = array();
+		$eventTypeNames = array('Bath', 'Feed', 'Diaper', 'Sleep');
+
+		foreach ($eventTypeNames as $eventTypeName) {
+			$lastEntry = EventType::where('name', $eventTypeName)
+				->firstOrFail()
+				->events()
+				->orderBy('created_at', 'DESC')
+				->first();
+
+			$last[strtolower($eventTypeName)] = array(
+				'timestamp' => is_null($lastEntry) ? 0 : $lastEntry->created_at->getTimestamp(),
+				'time' => is_null($lastEntry) ? '' : formatDateDiff($lastEntry->created_at),
+				'type' => is_null($lastEntry) ? '' : $lastEntry->subtype,
+				'value' => is_null($lastEntry) ? '' : $lastEntry->value
+			);
+		}
 
 		return array(
 			'age' => formatAge(new DateTime('2013-08-20 20:59:00')),
-			'sleeping' => ($lastSleep->subtype == 'start')
+			'sleeping' => ($last['sleep']['type'] == 'start'),
+			'attributes' => array(
+				'hygiene' => 1.0 - (($now->getTimestamp() - $last['bath']['timestamp']) / 3600 / 240),
+				'hunger' => 1.0 - (($now->getTimestamp() - $last['feed']['timestamp']) / 3600 / 20),
+				'bladder' => 1.0 - (($now->getTimestamp() - $last['diaper']['timestamp']) / 3600 / 10),
+				'energy' => 1.0 - (($now->getTimestamp() - $last['sleep']['timestamp']) / 3600 / 8),
+			)
 		);
 	}
 

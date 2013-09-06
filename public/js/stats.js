@@ -11,12 +11,18 @@ $(function() {
 	$.get('stats/update', function (data) {
 		// Profile
 		$('.profile-age').html(data.profile.age + ' old');
+		$('.profile-hygiene').css('width', (data.profile.attributes.hygiene * 100.0) + '%');
+		$('.profile-hunger').css('width', (data.profile.attributes.hunger * 100.0) + '%');
+		$('.profile-bladder').css('width', (data.profile.attributes.bladder * 100.0) + '%');
+		$('.profile-energy').css('width', (data.profile.attributes.energy * 100.0) + '%');
 
 		if (data.profile.sleeping) {
 			$('.box-profile .sleep-items').removeClass('hide');
 			$('.profile-age').append('<span>Sleeping (ssh!)</span>');
+			$('.profile-energy').parent().addClass('active');
 		} else {
 			$('.box-profile .sleep-items').addClass('hide');
+			$('.profile-energy').parent().removeClass('active');
 		}
 
 		// Diaper graph
