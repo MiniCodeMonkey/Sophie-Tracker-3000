@@ -9,9 +9,10 @@ class StatsController extends BaseController {
 
 	public function getUpdate()
 	{
-		$profile = $this->profile();
 		$output = Cache::remember('stats', 1, function ()
 		{
+			$profile = $this->profile();
+
 			return array(
 				'profile' => $profile,
 				'diaper_graph' => $this->diaperGraph(),
