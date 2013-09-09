@@ -44,6 +44,8 @@ The timeline is currently using a default [Bootstrap](http://getbootstrap.com) p
 
 Overall, the statistics dashboard has been designed in such a way that we are able to share interesting statistics with the whole interwebs without getting to intimate and personal with our collected data, this is why some key things might have been left out.
 
+**Disclaimer:** The statistics are only as accurate as our tracking, so if it says that our daughter hasn't been fed for two days, it's probably because of a tracking error and not because we haven't been taking care of our little girl ;)
+
 ### Feedback
 Do you have any cool ideas of how we can visualize the collected data? Can you build data models to improve some of the prediction? (some of my current approaches are very naive) Is there anything else you would like to see done?
 
@@ -59,7 +61,7 @@ Here's how to get started:
 The development environment requires [VirtualBox](https://www.virtualbox.org), [Vagrant 1.2.x](http://vagrantup.com), [Berkshelf](http://berkshelf.com), [vagrant-berkshelf](https://github.com/riotgames/vagrant-berkshelf) and [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager).
 The development environment can then be started with `vagrant up`, see [Vagrant LAMP Stack](https://github.com/MiniCodeMonkey/Vagrant-LAMP-Stack) for additional instructions.
 
-To install third-party dependencies, [Composer](http://getcomposer.org/) is required.
+To install third-party dependencies, [Composer](http://getcomposer.org) is required.
 
 **Clone repository**
 
