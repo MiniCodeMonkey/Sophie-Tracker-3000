@@ -10,14 +10,19 @@ class StatsController extends BaseController {
 	public function getUpdate()
 	{
 		$profile = $this->profile();
-		return Response::json(array(
-			'profile' => $profile,
-			'diaper_graph' => $this->diaperGraph(),
-			'diaper_stats' => $this->diaperStats(),
-			'last_fed' => $this->lastFed(),
-			'feed_time' => $this->feedTime(),
-			'day_chart' => $this->dayChart($profile['sleeping']),
-		));
+		$output = Cache::remember('stats', 1, function ()
+		{
+			return array(
+				'profile' => $profile,
+				'diaper_graph' => $this->diaperGraph(),
+				'diaper_stats' => $this->diaperStats(),
+				'last_fed' => $this->lastFed(),
+				'feed_time' => $this->feedTime(),
+				'day_chart' => $this->dayChart($profile['sleeping']),
+			));
+		});
+
+		return Response::json($output);
 	}
 
 	private function profile()
