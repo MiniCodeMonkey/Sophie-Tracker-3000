@@ -1,38 +1,48 @@
 ## Sophie Tracker 3000
 
+![Statistics dashboard](http://i.imgur.com/iKccwAs.jpg "Statistics dashboard")
+
 Sophie Tracker 3000 is a completely unscientific approach to tracking events in the life of our newborn daughter.
 
-It was quickly thrown together in the few hours of downtime we had in the first few weeks and is optimized to be used on our iPhones as well as small Android tablet wall-mounted in the nursery.
+It was quickly thrown together in the few hours of downtime we had in the first few weeks and is optimized to be used on our smartphones as well as a small Android tablet wall-mounted in the nursery.
 
-The web app allows us to track feedings, diaper changes, sleep, activities, medicine intakes, baths, supplies and more.
+It allows us to track feedings, diaper changes, sleep, activities, medicine intakes, baths, supplies and more.
 
-It has been designed specifically to require as few "taps" as possible while still recording a good amount of details for each event.
+It has been designed specifically to require as few finger taps as possible while still allowing us to record a good amount of details for each event.
 
 The app consists of two parts: A tracking dashboard optimized for touch devices and a statistics dashboard to visualize and show results of calculations based on the collected data.
 
-### Tracking events
+### Event tracking
 
 To ease the process of tracking diaper changes and other frequent events, I wall-mounted a Nexus 7 tablet above the changing table using industrial strength velcro tape (this stuff is amazing).
 
 It can easily be moved to other rooms where the velcro tape has been mounted and with a couple of cheap micro usb chargers bought off of Amazon and plugged in near the wall mounts, the tablet is able to always have plenty of power.
 ![Mounting the tablet](http://i.imgur.com/UAOMHMV.jpg "Mounting the tablet")
 
-The tablet has been configured barebones with two apps: [Screen Timeout Toggle](https://play.google.com/store/apps/details?id=com.chemdroid.screentimeouttoggle) to ensure that the scren always stays on and [Browser Kiosk Launcher](https://play.google.com/store/apps/details?id=com.droidhoster.launcher) that replaces the Android launcher with a simple app that displays a full screen browser pointing to the Sophie Tracker website. There's still a few quirks with the Browser Kiosk Launcher that needs to be worked out, but it works well for now.
-
 ![Tablet mounted on the wall](http://i.imgur.com/3ZrKWS4.jpg "Tablet mounted on the wall")
+
+The tablet has been configured barebones with two apps: [Screen Timeout Toggle](https://play.google.com/store/apps/details?id=com.chemdroid.screentimeouttoggle) to ensure that the scren always stays on and [Browser Kiosk Launcher](https://play.google.com/store/apps/details?id=com.droidhoster.launcher) that replaces the Android launcher with a simple app that displays a full screen browser pointing to the Sophie Tracker website.
+
+There's still a few quirks with the Browser Kiosk Launcher that needs to be worked out, but it works well for now.
+
+Primary events are shown on the first line and secondary events are shown on the second line, here's an example of how we track diaper changes:
+
+![Tracking diaper changes](http://i.imgur.com/WGNcdim.jpg "Tracking diaper changes")
+
+Tapping the "list" button in the top right corner, flips the screen over to provide a simple overview of the recently collected data.
+
+![List view](http://i.imgur.com/7h67b8P.jpg "List view")
 
 ### Visualizing collected data
 With all the collected data it would be fun to make some visualizations and calculations that can be displayed in the browser. This has been realized by building a block-based dashboard (Yes, I love the word "dashboard"!).
 
 The overall look and feel has been heavily inspired by the awesome [Dashing dashboard](http://shopify.github.io/dashing/), open sourced by [http://www.shopify.com](Shopify).
 
-![Statistics dashboard](http://i.imgur.com/iKccwAs.jpg "Statistics dashboard")
-
 In the top left corner you'll find a "Sophie" profile box, it indicates her current age and animates some "Z"'s if she's sleeping.
 
-Yep, the "progress bars" are totally inspired by [The Sims](http://www.thesims.com) and is mostly for fun. The hygiene goes down in relation to the time of her last bath, the hunger level goes down in relation to the time of her last feeding (amount/duration should really have had been taking into relation as well). The bladder bar correlates to latest diaper change and the energy bar goes down when she hasn't been sleeping for a while.
-
 ![Sleeping animation](http://i.imgur.com/hADESnW.jpg)
+
+Yep, the "progress bars" are totally inspired by [The Sims](http://www.thesims.com) and is mostly for fun. The hygiene bar goes down in relation to the time of her last bath, the hunger level goes down in relation to the time of her last feeding (amount/duration should really have had been taking into relation as well but it currently isn't). The bladder bar correlates to latest diaper change and the energy bar goes down when she hasn't been sleeping for a while.
 
 The diaper graph should explain itself, this is a look into diapers changed the last week (including today). Next to it, we have diaper statistics. This is actually really usefull, by tracking when we buy new diapers and looking at the average amount of diapers changed per day it is possible to estimate when we will run out. Later it would be cool to supplement this with automatically purchasing diapers on Amazon when we're about to run out.
 
@@ -44,7 +54,7 @@ The timeline is currently using a default [Bootstrap](http://getbootstrap.com) p
 
 Overall, the statistics dashboard has been designed in such a way that we are able to share interesting statistics with the whole interwebs without getting to intimate and personal with our collected data, this is why some key things might have been left out.
 
-**Disclaimer:** The statistics are only as accurate as our tracking, so if it says that our daughter hasn't been fed for two days, it's probably because of a tracking error and not because we haven't been taking care of our little girl ;)
+The statistics are of course only as accurate as our tracking efforts.
 
 ### Feedback
 Do you have any cool ideas of how we can visualize the collected data? Can you build data models to improve some of the prediction? (some of my current approaches are very naive) Is there anything else you would like to see done?
