@@ -19,7 +19,7 @@ class StatsController extends BaseController {
 				'last_fed' => $this->lastFed(),
 				'feed_time' => $this->feedTime(),
 				'day_chart' => $this->dayChart($profile['sleeping']),
-			));
+			);
 		});
 
 		return Response::json($output);
