@@ -45,7 +45,7 @@ The timeline is currently using a default [Bootstrap](http://getbootstrap.com) p
 Overall, the statistics dashboard has been designed in such a way that we are able to share interesting statistics with the whole interwebs without getting to intimate and personal with our collected data, this is why some key things might have been left out.
 
 ### Feedback
-Do you have any cool ideas of how we can visualize the collected data? Can you build data models to improve some of the predictions (some of my current approaches are very naive)? Is there anything else you would like to see done?
+Do you have any cool ideas of how we can visualize the collected data? Can you build data models to improve some of the prediction? (some of my current approaches are very naive) Is there anything else you would like to see done?
 
 Please [create an issue](https://github.com/MiniCodeMonkey/Sophie-Tracker-3000/issues/new) or [fork and make a pull request](https://help.github.com/articles/using-pull-requests)!
 
