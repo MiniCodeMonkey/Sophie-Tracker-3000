@@ -1,6 +1,8 @@
 ## Sophie Tracker 3000
 
-![Statistics dashboard](http://i.imgur.com/iKccwAs.jpg "Statistics dashboard")
+[View live statistics](http://sophietracker.codemonkey.io/stats)
+
+[![Statistics dashboard](http://i.imgur.com/iKccwAs.jpg)](http://sophietracker.codemonkey.io/stats)
 
 Sophie Tracker 3000 is a completely unscientific approach to tracking events in the life of our newborn daughter.
 
