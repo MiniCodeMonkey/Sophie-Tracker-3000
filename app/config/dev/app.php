@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://sophietracker.codemonkey.io',
+	'url' => 'http://sophietracker.local',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -112,7 +112,9 @@ return array(
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-		'Illuminate\Workbench\WorkbenchServiceProvider'
+		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'Way\Console\GuardLaravelServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider'
 
 	),
 
