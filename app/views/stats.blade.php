@@ -105,7 +105,6 @@
 	    	<p>
 	    		<a href="https://github.com/MiniCodeMonkey/Sophie-Tracker-3000" target="_blank"><i class="icon-github icon-4x"></i></a>
 	    		<a href="https://twitter.com/MathiasHansen" target="_blank"><i class="icon-twitter icon-4x"></i></a>
-	    		<a href="https://github.com/MiniCodeMonkey/Sophie-Tracker-3000/blob/master/readme.md" target="_blank"><i class="icon-info-sign icon-4x"></i></a>
 	    	</p>
 	    </li>
     </ul>
