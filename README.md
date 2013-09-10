@@ -58,6 +58,14 @@ Overall, the statistics dashboard has been designed in such a way that we are ab
 
 The statistics are of course only as accurate as our tracking efforts.
 
+### So, why is all this important?
+Tracking all these events can be really practical (i.e. knowing when to buy diapers), but there is also a more serious reason behind tracking all these things.
+
+Because we're collecting data on all of her activity by the minute, we can ask our pediatrician if the number of diapers she's using or amount she's eating is normal. (Can you tell we're anxious new parents?) And, hopefully in a few more weeks, we'll be able to extrapolate trends from her nap habits so we can start to have something resembling a regular routine.
+
+Also we're obsessive compulsive and use [Harvest](http
+://harvestapp.com) to optimize our work habits. Why not have Harvest for babies?
+
 ### Feedback
 Do you have any cool ideas of how we can visualize the collected data? Can you build data models to improve some of the prediction? (some of my current approaches are very naive) Is there anything else you would like to see done?
 
