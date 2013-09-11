@@ -11,10 +11,6 @@
 |
 */
 
-Route::group(array('before' => 'auth.basic'), function()
-{
-	Route::get('/', 'DashboardController@show');
-	Route::controller('track', 'TrackController');
-});
-
+Route::get('/', 'DashboardController@show');
+Route::controller('track', 'TrackController');
 Route::controller('stats', 'StatsController');
