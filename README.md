@@ -94,3 +94,33 @@ You can now edit `app/config/dev/database.php` and optionally copy it to `app/co
 **Run database migrations and seed default content**
 
 	# php artisan migrate --seed
+
+### Deploying to Digital Ocean
+
+The Vagrantfile is configured to deploy to Digital Ocean using the `vagrant-digitalocean` plugin.
+
+**Configure your credentials**
+
+  # export DO_API_KEY="YOUR KEY"
+  # export DO_CLIENT_ID="YOUR CLIENT ID"
+
+**Set the hostname**
+  
+Edit Vagrantfile, and replace `arthur.ninjagiraffes.co.uk` with your own hostname.
+
+**Build the Droplet**
+
+  # vagrant up
+
+**TEMPORARY: Change permissions, and install**
+
+On the first run you'll need to log in to your droplet, install dependencies, and set some permissions.
+
+This is probably hideously insecure as well, its been a long time since I did PHP.
+
+  # ssh $HOSTNAME -lroot
+  # cd /var/www/sophietracker
+  # composer install # You may need to resize to do this without running out of memory.
+  # cp app/config/dev/database.php app/config/database.php
+  # php artisan migrate --seed
+  # chown -R www-data /var/www/sophietracker
