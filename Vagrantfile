@@ -12,16 +12,19 @@ Vagrant.configure("2") do |config|
   # Set share folder
   config.vm.synced_folder "./" , "/var/www/sophietracker/"
 
-  # Use hostonly network with a static IP Address
-  # and enable hostmanager
-  config.hostmanager.enabled = true
-  config.hostmanager.manage_host = true
-  config.vm.define 'sophietracker' do |node|
-    node.vm.hostname = 'sophietracker.local'
-    node.vm.network :private_network, ip: '172.90.8.20'
-    node.hostmanager.aliases = %w(www.sophietracker.local)
+  config.vm.provider :digital_ocean do |provider, override|
+    override.ssh.private_key_path = "~/.ssh/id_rsa"
+    override.vm.box = "digital_ocean"
+    override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+    override.vm.hostname = "arthur.ninjagiraffes.co.uk"
+
+    # Make sure Chef is installed.
+    config.omnibus.chef_version = :latest
+
+    provider.client_id = ENV["DO_CLIENT_ID"]
+    provider.api_key = ENV["DO_API_KEY"]
+    provider.image = "Ubuntu 12.04.3 x64"
   end
-  config.vm.provision :hostmanager
 
   # Enable and configure chef solo
   config.vm.provision :chef_solo do |chef|
@@ -44,8 +47,8 @@ Vagrant.configure("2") do |config|
         :db_dump        => "/var/www/sophietracker/dump.sql",
 
         # Server name and alias(es) for Apache vhost
-        :server_name    => "sophietracker.local",
-        :server_aliases => "www.sophietracker.local",
+        :server_name    => "arthur.ninjagiraffes.co.uk",
+        :server_aliases => [ "www.arthur.ninjagiraffes.co.uk" ],
 
         # Document root for Apache vhost
         :docroot        => "/var/www/sophietracker/public",
@@ -60,8 +63,8 @@ Vagrant.configure("2") do |config|
         :server_root_password   => 'root',
         :server_repl_password   => 'root',
         :server_debian_password => 'root',
-        :bind_address           => '172.90.8.20',
-        :allow_remote_root      => true
+        :bind_address           => '127.0.0.1',
+        :allow_remote_root      => false
       }
     }
   end
