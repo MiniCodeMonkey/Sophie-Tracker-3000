@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sophie Tracker 3000</title>
+    <title>{{ Config::get('sophietracker.name') }} Tracker 3000</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
@@ -38,8 +38,8 @@
 @section('scripts')
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="/js/jQuery.fastClick.js"></script>
-    <script src="/js/jquery.gridster.min.js"></script>
+  <script src="/js/jQuery.fastClick.js"></script>
+  <script src="/js/jquery.gridster.min.js"></script>
 	{{ script() }}
 @show
 </body>

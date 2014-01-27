@@ -5,7 +5,7 @@
 <div class="gridster">
     <ul>
     	<li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="box-profile">
-	    	<h1>Baby Sophie</h1>
+	    	<h1>Baby {{ Config::get('sophietracker.name') }}</h1>
 	    	<div class="pull-left info">
 	    		<div class="sleep-items hide">    
 	                <div class="sleep">Z</div>
@@ -14,7 +14,7 @@
 	                <div class="sleep">Z</div>
 	            </div>
 
-		    	<img src="/img/sophie.jpg" alt="Sophie" class="img-circle">
+		    	<img src="/img/{{ Str::slug(Config::get('sophietracker.name')) }}.jpg" alt="{{ Config::get('sophietracker.name') }}" class="img-circle">
 		    	<h1 class="profile-age"></h1>
 		    </div>
 
@@ -46,7 +46,7 @@
 			    <li><i class="icon-sign-blank" style="color: rgb(255,255,255);"></i> Total diapers</li>
 			    <li><i class="icon-sign-blank" style="color: rgb(200,200,200);"></i> Wet only</li>
 			    <li><i class="icon-sign-blank" style="color: rgb(110,110,110);"></i> Dirty only</li>
-			    <li><i class="icon-sign-blank" style="color: rgb(50,50,50);"></i> Both wet & dirty</li>
+			    <li><i class="icon-sign-blank" style="color: rgb(50,50,50);"></i> Both wet &amp; dirty</li>
 			</ol>
 
         	<canvas id="diaperchart" width="520" height="210"></canvas>

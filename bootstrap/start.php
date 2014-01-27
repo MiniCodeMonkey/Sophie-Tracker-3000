@@ -13,8 +13,6 @@
 
 $app = new Illuminate\Foundation\Application;
 
-$app->redirectIfTrailingSlash();
-
 /*
 |--------------------------------------------------------------------------
 | Detect The Application Environment
@@ -26,11 +24,20 @@ $app->redirectIfTrailingSlash();
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment(function()
+{
+	if (!isset($_SERVER['SERVER_NAME'])) {
+		return null;
+	}
+	
+	$hostname = $_SERVER['SERVER_NAME'];
 
-	'dev' => array('*.local'),
-
-));
+	if (strpos($hostname, '.local') !== FALSE) {
+		return 'dev';
+	} else {
+		return substr($hostname, 0, -strlen('tracker.codemonkey.io')); // E.g. if sophietracker.codemonkey.io, environment = sophie
+	}
+});
 
 /*
 |--------------------------------------------------------------------------

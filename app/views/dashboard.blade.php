@@ -33,7 +33,7 @@
 @include('dialogs.note')
 
 <div class="page-header">
-    <h1><i class="icon-baby-baby"></i> <span>Sophie</span> Tracker 3000</h1>
+    <h1><i class="icon-baby-baby"></i> <span style="color: {{ Config::get('sophietracker.color') }};">{{ Config::get('sophietracker.name') }}</span> Tracker 3000</h1>
 
     <button type="button" class="btn btn-primary btn-lg" id="list-button">
         <i class="icon-list"></i>
