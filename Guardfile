@@ -1,27 +1,9 @@
 guard :concat, :type => "css", :files => %w[dashboard flip icons modal notification sleep slider stats style utilities], :input_dir => "public/css", :output => "public/css/styles.min"
 
-guard :concat, :type => "js", :files => %w[activity bath Chart diaper feed flip jQuery.fastClick lastevent medicine milestone mobile note notification pump sleep spinner stats supplies track], :input_dir => "public/js", :output => "public/js/scripts.min"
+guard :concat, :type => "js", :files => %w[activity bath Chart diaper feed flip food jQuery.fastClick lastevent medicine milestone mobile note notification pump sleep spinner stats supplies track], :input_dir => "public/js", :output => "public/js/scripts.min"
 
 guard :less, :all_on_start => true, :all_on_start => false, :output => 'public/css' do
 	watch(%r[^app/assets/less/(.+\.less)$])
-end
-
-# Refresh the browser on save
-guard 'livereload' do
-  watch(%r{.+(?<!\.min)\.(css|html|js|blade\.php)$})
-end
-
-guard :phpunit, :all_on_start => false, :tests_path => 'app/tests/', :cli => '--colors -c phpunit.xml' do
-  # Run any test in app/tests upon save.
-  watch(%r{^.+Test\.php$})
-
-  # When a view file is updated, run tests.
-  # Tip: you probably only want to run your integration tests.
-  watch(%r{app/views/.+\.php}) { Dir.glob('app/tests/**/*.php') }
-
-  # When a file is edited, try to run its associated test.
-  # Save app/models/User.php, and it will run app/tests/models/UserTest.php
-  watch(%r{^app/(.+)/(.+)\.php$}) { |m| "app/tests/#{m[1]}/#{m[2]}Test.php"}
 end
 
 module ::Guard

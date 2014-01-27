@@ -1,4 +1,4 @@
-<div class="modal fade" id="feedModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="milkModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">

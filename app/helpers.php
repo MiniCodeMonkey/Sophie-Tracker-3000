@@ -100,3 +100,39 @@ function spinner($step = 5, $default = 5, $unitName = 'ounces') {
             $buttonRight . "\n" .
         '</div>';
 }
+
+function iconForMedicine($name) {
+    switch ($name) {
+        case 'Vitamin D':
+            return 'icon-sun';
+
+        case 'Antacid':
+        case 'Zantac':
+            return 'icon-fire-extinguisher';
+
+        case 'Gripe Water':
+            return 'icon-baby-crying';
+
+        case 'Saline':
+        case 'Saline Drop':
+        case 'Saline Drops':
+            return 'icon-tint';
+        
+        default:
+            break;
+    }
+
+    return 'icon-star';
+}
+
+function iconForFood($name) {
+    switch ($name) {
+        case 'Fruit':
+            return 'icon-apple';
+        
+        default:
+            break;
+    }
+
+    return 'icon-star';
+}

@@ -71,7 +71,7 @@ class TrackController extends BaseController {
 	public function getStats()
 	{
 		$result = array();
-		$eventTypeNames = array('Feed', 'Pump', 'Diaper', 'Sleep');
+		$eventTypeNames = array('Milk', 'Pump', 'Diaper', 'Sleep', 'Food');
 
 		foreach ($eventTypeNames as $eventTypeName) {
 			$feedType = EventType::where('name', $eventTypeName)->firstOrFail();

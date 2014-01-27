@@ -34,9 +34,13 @@ $env = $app->detectEnvironment(function()
 
 	if (strpos($hostname, '.local') !== FALSE) {
 		return 'dev';
-	} else {
+	} elseif (strpos($hostname, '.codemonkey.io') !== FALSE) {
 		return substr($hostname, 0, -strlen('tracker.codemonkey.io')); // E.g. if sophietracker.codemonkey.io, environment = sophie
+	} elseif (strpos($hostname, '.micheleandmathi.as') !== FALSE) {
+		return substr($hostname, 0, -strlen('tracker.micheleandmathi.as')); // E.g. if sophietracker.codemonkey.io, environment = sophie
 	}
+
+	return null;
 });
 
 /*

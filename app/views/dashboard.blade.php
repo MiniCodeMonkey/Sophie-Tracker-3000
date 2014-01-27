@@ -31,6 +31,7 @@
 @include('dialogs.supplies')
 @include('dialogs.milestone')
 @include('dialogs.note')
+@include('dialogs.food')
 
 <div class="page-header">
     <h1><i class="icon-baby-baby"></i> <span style="color: {{ Config::get('sophietracker.color') }};">{{ Config::get('sophietracker.name') }}</span> Tracker 3000</h1>

@@ -26,6 +26,10 @@ $(function() {
 			// Prompt for activity name
 			var name = prompt('Enter activity name:');
 
+			if (!name) {
+				return false;
+			}
+
 			// Create button
 			var button = $('<button>').attr('type', 'button')
 				.addClass('btn')

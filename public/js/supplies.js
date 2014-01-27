@@ -26,6 +26,10 @@ $(function() {
 			// Prompt for supplies name
 			var name = prompt('Enter name:');
 
+			if (!name) {
+				return false;
+			}
+
 			// Create button
 			var button = $('<button>').attr('type', 'button')
 				.addClass('btn')

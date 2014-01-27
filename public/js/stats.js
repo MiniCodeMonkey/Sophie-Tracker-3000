@@ -77,7 +77,7 @@ function updateStats()
 		$.each(data.day_chart, function (index, event) {
 			var colorName = null;
 			switch (event.type) {
-				case 'Feed':
+				case 'Milk':
 					colorName = 'info';
 					break;
 

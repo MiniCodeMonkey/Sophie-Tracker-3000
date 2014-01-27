@@ -8,9 +8,10 @@ $(function() {
 function updateLastEvent()
 {
 	$.get('track/stats', function (response) {
-		$('.eventbutton-feed').find('.badge').html(response.feed.time);
+		$('.eventbutton-milk').find('.badge').html(response.milk.time);
 		$('.eventbutton-pump').find('.badge').html(response.pump.time);
 		$('.eventbutton-diaper').find('.badge').html(response.diaper.time);
+		$('.eventbutton-food').find('.badge').html(response.food.time);
 
 		if (response.sleep.type == 'start') {
 			if ($('.sleep-items').hasClass('hide')) {

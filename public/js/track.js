@@ -1,8 +1,9 @@
-function trackEvent(activeModal, type, subtype, value)
+function trackEvent(activeModal, type, subtype, value, refresh)
 {
 	type = type || '';
 	subtype = subtype || '';
 	value = value || '';
+	refresh = refresh || false;
 
 	if (activeModal) {
 		// Create and add loading indicator
@@ -32,6 +33,10 @@ function trackEvent(activeModal, type, subtype, value)
 				activeModal.modal('hide');
 			
 			updateLastEvent(); // Update the last feed/pump/diaper stats
+
+			if (refresh) {
+				window.location.reload();
+			}
 		} else {
 			showNotification(type, true);
 		}

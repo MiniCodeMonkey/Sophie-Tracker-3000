@@ -30,7 +30,7 @@ class StatsController extends BaseController {
 	{
 		$now = new DateTime;
 		$last = array();
-		$eventTypeNames = array('Bath', 'Feed', 'Diaper', 'Sleep');
+		$eventTypeNames = array('Bath', 'Milk', 'Diaper', 'Sleep');
 
 		foreach ($eventTypeNames as $eventTypeName) {
 			$lastEntry = EventType::where('name', $eventTypeName)
@@ -177,7 +177,7 @@ class StatsController extends BaseController {
 
 	private function lastFed()
 	{
-		$feedType = EventType::where('name', 'Feed')->firstOrFail();
+		$feedType = EventType::where('name', 'Milk')->firstOrFail();
 		$last = $feedType->events()
 			->orderBy('created_at', 'DESC')
 			->first();
@@ -208,7 +208,7 @@ class StatsController extends BaseController {
 		$oneDayAgo = new DateTime;
 		$oneDayAgo->sub(new DateInterval('PT24H'));
 
-		$feed = EventType::where('name', 'Feed')->firstOrFail();
+		$feed = EventType::where('name', 'Milk')->firstOrFail();
 		$feedings = $feed->events()
 			->where('created_at', '>', $oneDayAgo)
 			->orderBy('created_at', 'ASC')
@@ -263,7 +263,7 @@ class StatsController extends BaseController {
 			} else {
 				$width = 0.01;
 
-				if ($event->type->name == 'Feed') {
+				if ($event->type->name == 'Milk') {
 					if ($event->subtype == 'left' || $event->subtype == 'right') {
 						$width = 0.005 * ($event->value / 8);
 					} else {

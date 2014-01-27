@@ -48,7 +48,7 @@ function formatEvent(event) {
 	result.value = '';
 
 	switch (eventTypeName) {
-		case 'Feed':
+		case 'Milk':
 			result.description = eventTypeName + ' (' + event.subtype + ')';
 			result.value = (event.subtype == 'left' || event.subtype == 'right') ? event.value + ' min.' : event.value + ' oz';
 			break;
@@ -82,6 +82,10 @@ function formatEvent(event) {
 		case 'Milestone':
 		case 'Note':
 			result.description = event.subtype;
+			break;
+
+		case 'Food':
+			result.description = 'Ate ' + event.subtype;
 			break;
 
 		case 'Bath':

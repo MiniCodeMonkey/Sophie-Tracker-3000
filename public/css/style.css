@@ -148,11 +148,11 @@
 #dashboard button i {
   display: block;
 }
-#feedModal .feed-types {
+#milkModal .feed-types {
   margin-bottom: 20px;
 }
-#feedModal .feed-types button span,
-#feedModal .bottle-options button span {
+#milkModal .feed-types button span,
+#milkModal .bottle-options button span {
   display: block;
 }
 /* Based on: http://jsfiddle.net/girlie_mac/gFKxW/ */
@@ -381,6 +381,10 @@
   #dashboard .modal-dialog .spinner .unit {
     bottom: 0;
   }
+}
+#dashboard .modal-dialog .medicine-types .btn,
+#dashboard .modal-dialog .food-types .btn {
+  font-size: 24px;
 }
 #stats {
   background-color: #222;

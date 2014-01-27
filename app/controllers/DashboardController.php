@@ -15,7 +15,19 @@ class DashboardController extends BaseController {
 							->get()
 		);
 
-		return View::make('dashboard', compact('eventTypeCategories', 'timeLevels', 'bottleLevels', 'pumpLevels'));
+		$medicineTypes = DB::table('events')
+			->select(DB::raw('DISTINCT subtype'))
+			->where('type_id', 6)
+			->where('subtype', '!=', '')
+			->get();
+
+		$foodTypes = DB::table('events')
+			->select(DB::raw('DISTINCT subtype'))
+			->where('type_id', 12)
+			->where('subtype', '!=', '')
+			->get();
+
+		return View::make('dashboard', compact('eventTypeCategories', 'medicineTypes', 'foodTypes'));
 	}
 	
 }
