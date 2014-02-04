@@ -4,3 +4,4 @@ composer.phar
 .DS_Store
 .vagrant
 Berksfile.lock
+env
